@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		138CE4D321B7FBB20033CC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138CE4D221B7FBB20033CC05 /* AppDelegate.swift */; };
-		138CE4D521B7FBB20033CC05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138CE4D421B7FBB20033CC05 /* ViewController.swift */; };
 		138CE4D821B7FBB20033CC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138CE4D621B7FBB20033CC05 /* Main.storyboard */; };
 		138CE4DA21B7FBB30033CC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 138CE4D921B7FBB30033CC05 /* Assets.xcassets */; };
 		138CE4DD21B7FBB30033CC05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138CE4DB21B7FBB30033CC05 /* LaunchScreen.storyboard */; };
 		138CE4E821B7FBB40033CC05 /* OfficeChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138CE4E721B7FBB40033CC05 /* OfficeChatTests.swift */; };
 		138CE4F321B7FBB40033CC05 /* OfficeChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138CE4F221B7FBB40033CC05 /* OfficeChatUITests.swift */; };
 		138CE50121B80AFC0033CC05 /* ReadME.md in Resources */ = {isa = PBXBuildFile; fileRef = 138CE50021B80AFC0033CC05 /* ReadME.md */; };
+		13E469D021BD21AB00BB8D18 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E469CF21BD21AB00BB8D18 /* LoginViewController.swift */; };
+		13E469D221BD302800BB8D18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13E469D121BD302800BB8D18 /* GoogleService-Info.plist */; };
+		13E469D521BD56F200BB8D18 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E469D421BD56F200BB8D18 /* LoginViewModel.swift */; };
+		13E469D821BD748200BB8D18 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E469D721BD748200BB8D18 /* UIViewController+Extensions.swift */; };
+		13E469DB21BD81E900BB8D18 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E469DA21BD81E900BB8D18 /* Result.swift */; };
+		BBDF1D7DBB69C2D4C5E4B18F /* Pods_OfficeChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC852746AEED7BE34CD652AD /* Pods_OfficeChatTests.framework */; };
+		DD9CABF169298918565E67DE /* Pods_OfficeChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D3BE80C9E72270D174C22 /* Pods_OfficeChat.framework */; };
+		F3967B0C4D31E314EB2E9C25 /* Pods_OfficeChat_OfficeChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C876500F9CDA701D6A3ED23D /* Pods_OfficeChat_OfficeChatTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		125B726E6E498C7779DEC705 /* Pods-OfficeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.release.xcconfig"; sourceTree = "<group>"; };
 		138CE4CF21B7FBB20033CC05 /* OfficeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfficeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		138CE4D221B7FBB20033CC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		138CE4D421B7FBB20033CC05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		138CE4D721B7FBB20033CC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		138CE4D921B7FBB30033CC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		138CE4DC21B7FBB30033CC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +56,26 @@
 		138CE4F221B7FBB40033CC05 /* OfficeChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeChatUITests.swift; sourceTree = "<group>"; };
 		138CE4F421B7FBB40033CC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		138CE50021B80AFC0033CC05 /* ReadME.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadME.md; sourceTree = "<group>"; };
+		13E469CF21BD21AB00BB8D18 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		13E469D121BD302800BB8D18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		13E469D321BD341200BB8D18 /* OfficeChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OfficeChat.entitlements; sourceTree = "<group>"; };
+		13E469D421BD56F200BB8D18 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		13E469D721BD748200BB8D18 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		13E469DA21BD81E900BB8D18 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		213D3BE80C9E72270D174C22 /* Pods_OfficeChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfficeChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2454BADC3A497F35301A361B /* Pods-OfficeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.debug.xcconfig"; sourceTree = "<group>"; };
+		34BA4D63AE81DBD5E59C63AD /* Pods-OfficeChat-OfficeChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat-OfficeChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat-OfficeChatTests/Pods-OfficeChat-OfficeChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		414C15D9E28DF0FE7843C789 /* Pods-OfficeChat-OfficeChatTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat-OfficeChatTests.development.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat-OfficeChatTests/Pods-OfficeChat-OfficeChatTests.development.xcconfig"; sourceTree = "<group>"; };
+		41C0869520E4B30C65530905 /* Pods-OfficeChatTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChatTests.production.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests.production.xcconfig"; sourceTree = "<group>"; };
+		5C210F121954DAF90BB29E1D /* Pods-OfficeChat-OfficeChatTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat-OfficeChatTests.production.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat-OfficeChatTests/Pods-OfficeChat-OfficeChatTests.production.xcconfig"; sourceTree = "<group>"; };
+		63183BEF6B139C3C217B1705 /* Pods-OfficeChat-OfficeChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat-OfficeChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat-OfficeChatTests/Pods-OfficeChat-OfficeChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6AE75AB2A5431C30A2F38946 /* Pods-OfficeChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		8B2AC807FA75E79370C56BE8 /* Pods-OfficeChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C725D9BC3BBB3113D3C6A37 /* Pods-OfficeChat.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.production.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.production.xcconfig"; sourceTree = "<group>"; };
+		9C6934039DEB7DE9F00914F9 /* Pods-OfficeChatTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChatTests.development.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests.development.xcconfig"; sourceTree = "<group>"; };
+		C876500F9CDA701D6A3ED23D /* Pods_OfficeChat_OfficeChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfficeChat_OfficeChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAECCEC6A1CCDFE12A80DAB6 /* Pods-OfficeChat.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.development.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.development.xcconfig"; sourceTree = "<group>"; };
+		FC852746AEED7BE34CD652AD /* Pods_OfficeChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfficeChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD9CABF169298918565E67DE /* Pods_OfficeChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3967B0C4D31E314EB2E9C25 /* Pods_OfficeChat_OfficeChatTests.framework in Frameworks */,
+				BBDF1D7DBB69C2D4C5E4B18F /* Pods_OfficeChatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +106,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FFEDA3A34CF6485D9F6D5D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2454BADC3A497F35301A361B /* Pods-OfficeChat.debug.xcconfig */,
+				CAECCEC6A1CCDFE12A80DAB6 /* Pods-OfficeChat.development.xcconfig */,
+				125B726E6E498C7779DEC705 /* Pods-OfficeChat.release.xcconfig */,
+				8C725D9BC3BBB3113D3C6A37 /* Pods-OfficeChat.production.xcconfig */,
+				63183BEF6B139C3C217B1705 /* Pods-OfficeChat-OfficeChatTests.debug.xcconfig */,
+				414C15D9E28DF0FE7843C789 /* Pods-OfficeChat-OfficeChatTests.development.xcconfig */,
+				34BA4D63AE81DBD5E59C63AD /* Pods-OfficeChat-OfficeChatTests.release.xcconfig */,
+				5C210F121954DAF90BB29E1D /* Pods-OfficeChat-OfficeChatTests.production.xcconfig */,
+				8B2AC807FA75E79370C56BE8 /* Pods-OfficeChatTests.debug.xcconfig */,
+				9C6934039DEB7DE9F00914F9 /* Pods-OfficeChatTests.development.xcconfig */,
+				6AE75AB2A5431C30A2F38946 /* Pods-OfficeChatTests.release.xcconfig */,
+				41C0869520E4B30C65530905 /* Pods-OfficeChatTests.production.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		138CE4C621B7FBB20033CC05 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +133,8 @@
 				138CE4E621B7FBB40033CC05 /* OfficeChatTests */,
 				138CE4F121B7FBB40033CC05 /* OfficeChatUITests */,
 				138CE4D021B7FBB20033CC05 /* Products */,
+				0FFEDA3A34CF6485D9F6D5D0 /* Pods */,
+				E768487703F222DFB2C16093 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,8 +151,14 @@
 		138CE4D121B7FBB20033CC05 /* OfficeChat */ = {
 			isa = PBXGroup;
 			children = (
+				13E469D921BD81D400BB8D18 /* Utility */,
+				13E469D621BD744800BB8D18 /* Extensions */,
+				13E469D321BD341200BB8D18 /* OfficeChat.entitlements */,
+				13E469D121BD302800BB8D18 /* GoogleService-Info.plist */,
+				13E469CB21BD1B6500BB8D18 /* Screens */,
+				13E469CA21BD1B5700BB8D18 /* Networking */,
+				13E469C821BD1B1A00BB8D18 /* Models */,
 				138CE4D221B7FBB20033CC05 /* AppDelegate.swift */,
-				138CE4D421B7FBB20033CC05 /* ViewController.swift */,
 				138CE4D621B7FBB20033CC05 /* Main.storyboard */,
 				138CE4D921B7FBB30033CC05 /* Assets.xcassets */,
 				138CE4DB21B7FBB30033CC05 /* LaunchScreen.storyboard */,
@@ -128,6 +185,79 @@
 			path = OfficeChatUITests;
 			sourceTree = "<group>";
 		};
+		13E469C821BD1B1A00BB8D18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		13E469CA21BD1B5700BB8D18 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		13E469CB21BD1B6500BB8D18 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				13E469CE21BD1B9900BB8D18 /* ChatListScreen */,
+				13E469CD21BD1B8D00BB8D18 /* ChatScreen */,
+				13E469CC21BD1B7B00BB8D18 /* LoginScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		13E469CC21BD1B7B00BB8D18 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				13E469CF21BD21AB00BB8D18 /* LoginViewController.swift */,
+				13E469D421BD56F200BB8D18 /* LoginViewModel.swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		13E469CD21BD1B8D00BB8D18 /* ChatScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatScreen;
+			sourceTree = "<group>";
+		};
+		13E469CE21BD1B9900BB8D18 /* ChatListScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatListScreen;
+			sourceTree = "<group>";
+		};
+		13E469D621BD744800BB8D18 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				13E469D721BD748200BB8D18 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		13E469D921BD81D400BB8D18 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				13E469DA21BD81E900BB8D18 /* Result.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		E768487703F222DFB2C16093 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				213D3BE80C9E72270D174C22 /* Pods_OfficeChat.framework */,
+				C876500F9CDA701D6A3ED23D /* Pods_OfficeChat_OfficeChatTests.framework */,
+				FC852746AEED7BE34CD652AD /* Pods_OfficeChatTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,10 +265,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 138CE4F721B7FBB40033CC05 /* Build configuration list for PBXNativeTarget "OfficeChat" */;
 			buildPhases = (
+				D4E1095243AFD162951FD164 /* [CP] Check Pods Manifest.lock */,
 				138CE4CB21B7FBB20033CC05 /* Sources */,
 				138CE4CC21B7FBB20033CC05 /* Frameworks */,
 				138CE4CD21B7FBB20033CC05 /* Resources */,
 				1327999D21B93C370039977C /* ShellScript */,
+				3967CDD9830AA199E10516C2 /* [CP] Embed Pods Frameworks */,
+				0EA928FB9D3B299510A5CF5B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -153,9 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 138CE4FA21B7FBB40033CC05 /* Build configuration list for PBXNativeTarget "OfficeChatTests" */;
 			buildPhases = (
+				60FF2A6C9904F0634FADA05C /* [CP] Check Pods Manifest.lock */,
 				138CE4DF21B7FBB40033CC05 /* Sources */,
 				138CE4E021B7FBB40033CC05 /* Frameworks */,
 				138CE4E121B7FBB40033CC05 /* Resources */,
+				4B66E34B29429B2A36607CAA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,6 +332,11 @@
 				TargetAttributes = {
 					138CE4CE21B7FBB20033CC05 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					138CE4E221B7FBB40033CC05 = {
 						CreatedOnToolsVersion = 10.1;
@@ -235,6 +375,7 @@
 			files = (
 				138CE4DD21B7FBB30033CC05 /* LaunchScreen.storyboard in Resources */,
 				138CE4DA21B7FBB30033CC05 /* Assets.xcassets in Resources */,
+				13E469D221BD302800BB8D18 /* GoogleService-Info.plist in Resources */,
 				138CE50121B80AFC0033CC05 /* ReadME.md in Resources */,
 				138CE4D821B7FBB20033CC05 /* Main.storyboard in Resources */,
 			);
@@ -257,6 +398,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0EA928FB9D3B299510A5CF5B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1327999D21B93C370039977C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,6 +437,114 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		3967CDD9830AA199E10516C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B66E34B29429B2A36607CAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60FF2A6C9904F0634FADA05C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OfficeChatTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4E1095243AFD162951FD164 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OfficeChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -281,7 +552,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				138CE4D521B7FBB20033CC05 /* ViewController.swift in Sources */,
+				13E469D821BD748200BB8D18 /* UIViewController+Extensions.swift in Sources */,
+				13E469DB21BD81E900BB8D18 /* Result.swift in Sources */,
+				13E469D021BD21AB00BB8D18 /* LoginViewController.swift in Sources */,
+				13E469D521BD56F200BB8D18 /* LoginViewModel.swift in Sources */,
 				138CE4D321B7FBB20033CC05 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,8 +729,10 @@
 		};
 		138CE4F821B7FBB40033CC05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2454BADC3A497F35301A361B /* Pods-OfficeChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OfficeChat/OfficeChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAU58TE88U;
 				INFOPLIST_FILE = OfficeChat/Info.plist;
@@ -473,8 +749,10 @@
 		};
 		138CE4F921B7FBB40033CC05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 125B726E6E498C7779DEC705 /* Pods-OfficeChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OfficeChat/OfficeChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAU58TE88U;
 				INFOPLIST_FILE = OfficeChat/Info.plist;
@@ -491,6 +769,7 @@
 		};
 		138CE4FB21B7FBB40033CC05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B2AC807FA75E79370C56BE8 /* Pods-OfficeChatTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +791,7 @@
 		};
 		138CE4FC21B7FBB40033CC05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AE75AB2A5431C30A2F38946 /* Pods-OfficeChatTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -634,8 +914,10 @@
 		};
 		138CE50321B81CCA0033CC05 /* Development */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAECCEC6A1CCDFE12A80DAB6 /* Pods-OfficeChat.development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OfficeChat/OfficeChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAU58TE88U;
 				INFOPLIST_FILE = OfficeChat/Info.plist;
@@ -652,6 +934,7 @@
 		};
 		138CE50421B81CCA0033CC05 /* Development */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C6934039DEB7DE9F00914F9 /* Pods-OfficeChatTests.development.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -748,8 +1031,10 @@
 		};
 		138CE50721B81CE80033CC05 /* Production */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C725D9BC3BBB3113D3C6A37 /* Pods-OfficeChat.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OfficeChat/OfficeChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAU58TE88U;
 				INFOPLIST_FILE = OfficeChat/Info.plist;
@@ -766,6 +1051,7 @@
 		};
 		138CE50821B81CE80033CC05 /* Production */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41C0869520E4B30C65530905 /* Pods-OfficeChatTests.production.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

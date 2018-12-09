@@ -1,0 +1,8 @@
+included:
+  - OfficeChat
+disabled_rules:
+  - identifier_name
+  - colon
+  - trailing_whitespace
+excluded:
+  - Pods
