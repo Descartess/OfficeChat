@@ -9,19 +9,27 @@ Chatting App that will further facilitate interaction among the members thereby 
 
 1. Clone the repository 
 
-``` git clone https://github.com/Descartess/OfficeChat.git ```
+```
+    git clone https://github.com/Descartess/OfficeChat.git
+```
 
 2. Install Dependecies
 
-``` pod install ```
+``` 
+    pod install
+```
 
-3. Get GoogleService-Info.plist and place in the ` OfficeChat` directory
+3. Get GoogleService-Info.plist and place in the ` OfficeChat`  directory
 
-``` https://firebase.google.com/docs/ios/setup ```
+``` 
+    https://firebase.google.com/docs/ios/setup 
+```
 
 4. Open the project workspace
 
-``` open OfficeChat.xcworkspace ```
+```
+    open OfficeChat.xcworkspace 
+```
 
 
 #### Features 
