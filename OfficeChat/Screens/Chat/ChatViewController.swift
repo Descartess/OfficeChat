@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import MessageKit
 import MessageInputBar
+import Photos
 
 class ChatViewController: MessagesViewController {
     
@@ -25,6 +26,21 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesDisplayDelegate = self
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
+        
+        let cameraItem = InputBarButtonItem(type: .system)
+        cameraItem.tintColor = .primary
+        cameraItem.image = #imageLiteral(resourceName: "camera")
+        
+        cameraItem.addTarget(
+            self,
+            action: #selector(cameraButtonPressed),
+            for: .primaryActionTriggered
+        )
+        cameraItem.setSize(CGSize(width: 50, height: 50), animated: false)
+        
+        messageInputBar.leftStackView.alignment = .center
+        messageInputBar.setLeftStackViewWidthConstant(to: 50, animated: false)
+        messageInputBar.setStackViewItems([cameraItem], forStack: .left, animated: false)
     } 
     
     func bindViewModel() {
@@ -32,6 +48,20 @@ class ChatViewController: MessagesViewController {
             return
         }
         title = vm.channel.name
+    }
+    
+    @objc
+    func cameraButtonPressed() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
+        
+        present(picker, animated: true, completion: nil)
     }
 }
 
@@ -103,11 +133,47 @@ extension ChatViewController: MessageInputBarDelegate {
     }
 }
 
-extension ChatViewController: UIImagePickerControllerDelegate {
+extension ChatViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        if let asset = info[.phAsset] as? PHAsset {
+            let size = CGSize(width: 500, height: 500)
+            PHImageManager.default().requestImage(for: asset,
+                                                  targetSize: size,
+                                                  contentMode: .aspectFit,
+                                                  options: nil) { result, info in
+                    
+                    guard let image = result else {
+                        return
+                    }
+                    
+                    self.viewModel?.sendPhoto(image)
+            }
+            
+        } else if let image = info[.originalImage] as? UIImage {
+            viewModel?.sendPhoto(image)
+        }
+    }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+
 }
 
 extension ChatViewController: ChatViewDelegate {
+    func isUploadingPhoto() {
+        guard let vm = viewModel else { return }
+        
+        DispatchQueue.main.async {
+            self.messageInputBar.leftStackViewItems.forEach { item in
+                item.messageInputBar?.isUserInteractionEnabled = !vm.uploadingImage
+            }
+        }
+    }
+    
     func didSaveMessage() {
         DispatchQueue.main.async {
             self.messagesCollectionView.scrollToBottom()

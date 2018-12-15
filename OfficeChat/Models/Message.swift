@@ -9,6 +9,7 @@
 import Foundation
 import MessageKit
 import Firebase
+import FirebaseFirestore
 
 struct Message: MessageType {
     var kind: MessageKind
@@ -20,8 +21,8 @@ struct Message: MessageType {
     var sender: Sender
     var content: String
     var sentDate: Date
-    var image: UIImage? = nil
-    var downloadURL: URL? = nil
+    var image: UIImage?
+    var downloadURL: URL?
     
     let id: String?
     
@@ -41,8 +42,7 @@ struct Message: MessageType {
             let senderID = data["senderID"] as? String,
             let senderName = data["senderName"] as? String
         else { return nil }
-        
-        
+
         id = document.documentID
         
         self.sentDate = sentDate
@@ -51,13 +51,23 @@ struct Message: MessageType {
         if let content = data["content"] as? String {
             self.content = content
             downloadURL = nil
+            kind = .text(content)
         } else if let urlString = data["url"] as? String, let url = URL(string: urlString) {
             downloadURL = url
             content = ""
+            kind = .photo(Image(url: url))
         } else {
             return nil
         }
-        kind = .text(self.content)
+    }
+    
+    init(user: User, image: UIImage) {
+        sender = Sender(id: user.uid, displayName: "")
+        self.image = image
+        content = ""
+        sentDate = Date()
+        id = nil
+        kind = .photo((Image(image: image)))
     }
 }
 
