@@ -38,7 +38,7 @@ class LoginViewModel {
     
     func signInUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { user, error in
-            if let _ = error, user == nil {
+            if error != nil, user == nil {
                 completion(false)
             } else {
                 completion(true)
@@ -47,11 +47,11 @@ class LoginViewModel {
     }
     
     func createUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { user, error in
-            if let _ = error, user == nil {
-                completion(false)
-            } else {
+        Auth.auth().createUser(withEmail: email, password: password) { user, _ in
+            if user != nil {
                 completion(true)
+            } else {
+                completion(false)
             }
         }
     }
