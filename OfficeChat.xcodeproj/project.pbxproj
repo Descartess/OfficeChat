@@ -27,6 +27,9 @@
 		13AC768B21C50066007AE87C /* ChatViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC768A21C50066007AE87C /* ChatViewDelegate.swift */; };
 		13AC768D21C5031E007AE87C /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC768C21C5031E007AE87C /* UIScrollView+Extensions.swift */; };
 		13AC768F21C51595007AE87C /* JSONRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC768E21C51595007AE87C /* JSONRepresentation.swift */; };
+		13DA537F21C533C300395772 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 13DA537E21C533C300395772 /* Podfile.lock */; };
+		13DA538121C5397500395772 /* UImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA538021C5397500395772 /* UImage+Extensions.swift */; };
+		13DA538321C5765F00395772 /* ImageMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA538221C5765F00395772 /* ImageMedia.swift */; };
 		13E469D021BD21AB00BB8D18 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E469CF21BD21AB00BB8D18 /* LoginViewController.swift */; };
 		13E469D221BD302800BB8D18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13E469D121BD302800BB8D18 /* GoogleService-Info.plist */; };
 		13E469D521BD56F200BB8D18 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E469D421BD56F200BB8D18 /* LoginViewModel.swift */; };
@@ -84,6 +87,9 @@
 		13AC768A21C50066007AE87C /* ChatViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewDelegate.swift; sourceTree = "<group>"; };
 		13AC768C21C5031E007AE87C /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
 		13AC768E21C51595007AE87C /* JSONRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRepresentation.swift; sourceTree = "<group>"; };
+		13DA537E21C533C300395772 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
+		13DA538021C5397500395772 /* UImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UImage+Extensions.swift"; sourceTree = "<group>"; };
+		13DA538221C5765F00395772 /* ImageMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMedia.swift; sourceTree = "<group>"; };
 		13E469CF21BD21AB00BB8D18 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		13E469D121BD302800BB8D18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13E469D321BD341200BB8D18 /* OfficeChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OfficeChat.entitlements; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 		138CE4C621B7FBB20033CC05 = {
 			isa = PBXGroup;
 			children = (
+				13DA537E21C533C300395772 /* Podfile.lock */,
 				138CE50021B80AFC0033CC05 /* ReadME.md */,
 				138CE4D121B7FBB20033CC05 /* OfficeChat */,
 				138CE4E621B7FBB40033CC05 /* OfficeChatTests */,
@@ -226,11 +233,26 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		13DA538421C579EC00395772 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		13DA538521C57A1100395772 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		13E469C821BD1B1A00BB8D18 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				13AC767421BFC48E007AE87C /* Channel.swift */,
 				13AC767C21C129A2007AE87C /* Message.swift */,
+				13DA538221C5765F00395772 /* ImageMedia.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,6 +260,8 @@
 		13E469CB21BD1B6500BB8D18 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				13DA538521C57A1100395772 /* Profile */,
+				13DA538421C579EC00395772 /* Settings */,
 				13E469CE21BD1B9900BB8D18 /* ChatList */,
 				13E469CD21BD1B8D00BB8D18 /* Chat */,
 				13E469CC21BD1B7B00BB8D18 /* Login */,
@@ -280,6 +304,7 @@
 				13E469D721BD748200BB8D18 /* UIViewController+Extensions.swift */,
 				13AC768821C4FBC9007AE87C /* UIColor+Extensions.swift */,
 				13AC768C21C5031E007AE87C /* UIScrollView+Extensions.swift */,
+				13DA538021C5397500395772 /* UImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -418,6 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13DA537F21C533C300395772 /* Podfile.lock in Resources */,
 				138CE4DD21B7FBB30033CC05 /* LaunchScreen.storyboard in Resources */,
 				138CE4DA21B7FBB30033CC05 /* Assets.xcassets in Resources */,
 				13E469D221BD302800BB8D18 /* GoogleService-Info.plist in Resources */,
@@ -597,7 +623,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13DA538321C5765F00395772 /* ImageMedia.swift in Sources */,
 				13AC768F21C51595007AE87C /* JSONRepresentation.swift in Sources */,
+				13DA538121C5397500395772 /* UImage+Extensions.swift in Sources */,
 				13E469E021BD95E600BB8D18 /* ChatListViewController.swift in Sources */,
 				13AC767521BFC48E007AE87C /* Channel.swift in Sources */,
 				13AC768021C12E0F007AE87C /* Coordinator.swift in Sources */,

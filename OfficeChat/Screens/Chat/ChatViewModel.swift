@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseAuth
+import FirebaseStorage
 
 class ChatViewModel {
     
@@ -21,6 +22,14 @@ class ChatViewModel {
     
     var user: User
     var channel: Channel
+    
+    let storage = Storage.storage().reference()
+    
+    var uploadingImage = false {
+        didSet {
+            delegate?.isUploadingPhoto()
+        }
+    }
     
     init?(user: User, channel: Channel) {
         self.user = user
@@ -54,16 +63,91 @@ class ChatViewModel {
         }
     }
     
+    func downloadImage(at url: URL, completion: @escaping (UIImage?) -> Void) {
+        let ref = Storage.storage().reference(forURL: url.absoluteString)
+        let megaByte = Int64(1 * 1024 * 1024)
+        
+        ref.getData(maxSize: megaByte) { data, error in
+            guard let imageData = data else {
+                completion(nil)
+                return
+            }
+            completion(UIImage(data: imageData))
+        }
+    }
+
+    
     func handleDocumentChange(_ change: DocumentChange) {
-        guard let message = Message(document: change.document) else { return }
+        guard var message = Message(document: change.document) else { return }
         switch change.type {
         case .added:
-            insertNewMessage(message)
+            if let url = message.downloadURL {
+                downloadImage(at: url) { [weak self] image in
+                    guard let self = self else {
+                        return
+                    }
+                    guard let image = image else {
+                        return
+                    }
+                    
+                    message.image = image
+                    self.insertNewMessage(message)
+                }
+            } else {
+                insertNewMessage(message)
+            }
         default:
             break
         }
     }
     
+    func uploadImage(_ image: UIImage, to channel: Channel, completion: @escaping (URL?) -> Void) {
+        guard let channelID = channel.id else {
+            completion(nil)
+            return
+        }
+        
+        guard let scaledImage = image.scaledToSafeUploadSize,
+            let data = scaledImage.jpegData(compressionQuality: 0.4) else {
+                completion(nil)
+                return
+        }
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        let imageName = [UUID().uuidString, String(Date().timeIntervalSince1970)].joined()
+        
+        let imageRef = storage.child(channelID).child(imageName)
+            
+        imageRef.putData(data, metadata: metadata) { meta, _ in
+            imageRef.downloadURL { url, _ in
+                completion(url)
+            }
+        }
+    }
+    
+    func sendPhoto(_ image: UIImage) {
+        uploadingImage = true
+        
+        uploadImage(image, to: channel) { [weak self] url in
+            guard let `self` = self else {
+                return
+            }
+            self.uploadingImage = false
+            
+            guard let url = url else {
+                return
+            }
+            
+            var message = Message(user: self.user, image: image)
+            message.downloadURL = url
+            
+            self.save(message)
+            self.delegate?.didSaveMessage()
+        }
+    }
+
     deinit {
         messageListener?.remove()
     }

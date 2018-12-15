@@ -11,4 +11,5 @@ import Foundation
 protocol ChatViewDelegate: class {
     func insertNewMessage(_ message: Message)
     func didSaveMessage()
+    func isUploadingPhoto()
 }
