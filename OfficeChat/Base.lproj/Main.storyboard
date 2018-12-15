@@ -85,6 +85,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="8VC-pD-mAC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
+            <point key="canvasLocation" x="199" y="33"/>
+        </scene>
+        <!--Chat List View Controller-->
+        <scene sceneID="8SJ-TX-4FI">
+            <objects>
+                <viewController storyboardIdentifier="ChatListViewControllerID" id="wO6-g3-enL" customClass="ChatListViewController" customModule="OfficeChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VXP-Cv-waf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kmS-rr-p3K">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qVR-gS-OLG">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qVR-gS-OLG" id="elw-aw-LST">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="20L-iu-uRV" firstAttribute="bottom" secondItem="kmS-rr-p3K" secondAttribute="bottom" id="DpF-Q8-l9S"/>
+                            <constraint firstItem="kmS-rr-p3K" firstAttribute="centerX" secondItem="20L-iu-uRV" secondAttribute="centerX" id="MaJ-fo-6tq"/>
+                            <constraint firstItem="kmS-rr-p3K" firstAttribute="top" secondItem="20L-iu-uRV" secondAttribute="top" id="YB4-hc-a7w"/>
+                            <constraint firstItem="kmS-rr-p3K" firstAttribute="width" secondItem="VXP-Cv-waf" secondAttribute="width" id="bwD-Ot-gwp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="20L-iu-uRV"/>
+                    </view>
+                    <connections>
+                        <outlet property="chatListTableView" destination="kmS-rr-p3K" id="Iye-aE-ap6"/>
+                        <outlet property="searchDisplayController" destination="oiZ-q0-ZRe" id="qVO-hN-NBT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mw6-AK-TDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="oiZ-q0-ZRe">
+                    <connections>
+                        <outlet property="delegate" destination="wO6-g3-enL" id="WCx-fX-QuU"/>
+                        <outlet property="searchContentsController" destination="wO6-g3-enL" id="Xy1-K6-YH0"/>
+                        <outlet property="searchResultsDataSource" destination="wO6-g3-enL" id="mOi-bG-iVC"/>
+                        <outlet property="searchResultsDelegate" destination="wO6-g3-enL" id="fGf-cT-FHg"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1136" y="33"/>
         </scene>
     </scenes>
 </document>

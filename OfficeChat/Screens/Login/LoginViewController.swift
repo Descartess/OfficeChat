@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 enum AlertReasons {
     case invalidEmail
@@ -29,7 +30,7 @@ class LoginViewController: UIViewController {
             if !result {
                 self.showAlert(type: .invalidCredentials)
             } else {
-                self.showAlert(type: .success)
+                self.navigateToChatListScreen()
             }
         }
     }
@@ -38,12 +39,12 @@ class LoginViewController: UIViewController {
         guard
             let vm = viewModel,
             let input = validateInput()
-            else { return }
+        else { return }
         vm.createUser(email: input.email, password: input.password) { result in
             if !result {
                 self.showAlert(type: .invalidCredentials)
             } else {
-                self.showAlert(type: .success)
+                self.navigateToChatListScreen()
             }
         }
     }
@@ -81,6 +82,16 @@ class LoginViewController: UIViewController {
             isViewLoaded,
             let _ = viewModel
         else { return }
+    }
+    
+    func navigateToChatListScreen() {
+        guard let chatListViewController = ChatListViewController.instantiate(from: .main),
+            let user = Auth.auth().currentUser
+            else { return }
+        let vm = ChatListViewModel(currentUser: user)
+        vm.delegate = chatListViewController
+        chatListViewController.viewModel = vm
+        self.present(chatListViewController, animated: false, completion: nil)
     }
     
     func showAlert(type: AlertReasons) {
