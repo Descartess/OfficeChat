@@ -12,6 +12,7 @@ import UIKit
 class ChatListViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var chatListTableView: UITableView!
+    var currentAlertController: UIAlertController?
     
     var viewModel: ChatListViewModel? {
         didSet {
@@ -23,10 +24,76 @@ class ChatListViewController: UIViewController {
         chatListTableView.register(UITableViewCell.self, forCellReuseIdentifier: "channelCell")
         chatListTableView.delegate = self
         chatListTableView.dataSource = self
+        
+        title = "Chats"
+        setUpNavBar()
+    }
+    
+    func setUpNavBar() {
+        navigationItem.leftBarButtonItem = leftBarButtonItem()
+        navigationItem.rightBarButtonItem = rightBarButtonItem()
+    }
+    
+    func rightBarButtonItem() -> UIBarButtonItem {
+        let rightBar = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil)
+        return rightBar
+    }
+    
+    func leftBarButtonItem() -> UIBarButtonItem {
+        let leftBar = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonPressed))
+        return leftBar
     }
     
     func bindViewModel() {
+    
+    }
+    
+    @objc func searchButtonPressed() {
         
+    }
+    
+    @objc func addButtonPressed() {
+        let ac = UIAlertController(title: "Create a new Channel", message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        ac.addTextField { field in
+            field.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+            field.enablesReturnKeyAutomatically = true
+            field.autocapitalizationType = .words
+            field.clearButtonMode = .whileEditing
+            field.placeholder = "Channel name"
+            field.returnKeyType = .done
+            field.tintColor = .primary
+        }
+        
+        let createAction = UIAlertAction(title: "Create", style: .default, handler: { _ in
+            self.createChannel()
+        })
+        createAction.isEnabled = false
+        ac.addAction(createAction)
+        ac.preferredAction = createAction
+        
+        present(ac, animated: true) {
+            ac.textFields?.first?.becomeFirstResponder()
+        }
+        currentAlertController = ac
+    }
+    
+    @objc private func textFieldDidChange(_ field: UITextField) {
+        guard let ac = currentAlertController else {
+            return
+        }
+        
+        ac.preferredAction?.isEnabled = field.hasText
+    }
+    
+    func createChannel() {
+        guard
+            let vm = viewModel,
+            let ac = currentAlertController,
+            let channelName = ac.textFields?.first?.text
+        else { return }
+        let channel = Channel(name: channelName)
+        vm.createChannel(channel)
     }
 }
 
@@ -55,7 +122,7 @@ extension ChatListViewController: UITableViewDataSource, UITableViewDelegate {
         let chatViewController = ChatViewController()
         chatViewModel.delegate = chatViewController
         chatViewController.viewModel = chatViewModel
-        self.present(chatViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(chatViewController, animated: true)
     }
 }
 

@@ -144,7 +144,6 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                                                   targetSize: size,
                                                   contentMode: .aspectFit,
                                                   options: nil) { result, info in
-                    
                     guard let image = result else {
                         return
                     }

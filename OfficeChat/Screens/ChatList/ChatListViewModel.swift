@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class ChatListViewModel {
     let db = Firestore.firestore()
+    
     var chatReference: CollectionReference {
         return db.collection("channels")
     }
@@ -34,6 +35,14 @@ class ChatListViewModel {
             
             snapshot.documentChanges.forEach { change in
                 self.handleDocumentChange(change)
+            }
+        }
+    }
+    
+    func createChannel(_ channel: Channel) {
+        chatReference.addDocument(data: channel.representation) { error in
+            if let e = error {
+                print("Error saving channel: \(e.localizedDescription)")
             }
         }
     }

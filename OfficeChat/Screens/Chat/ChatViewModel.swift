@@ -76,19 +76,16 @@ class ChatViewModel {
         }
     }
 
-    
     func handleDocumentChange(_ change: DocumentChange) {
         guard var message = Message(document: change.document) else { return }
         switch change.type {
         case .added:
             if let url = message.downloadURL {
                 downloadImage(at: url) { [weak self] image in
-                    guard let self = self else {
-                        return
-                    }
-                    guard let image = image else {
-                        return
-                    }
+                    guard
+                        let self = self,
+                        let image = image
+                    else { return }
                     
                     message.image = image
                     self.insertNewMessage(message)

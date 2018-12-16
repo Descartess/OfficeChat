@@ -39,3 +39,15 @@ extension Channel: Comparable {
         return lhs.name < rhs.name
     }
 }
+
+extension Channel: JSONRepresentation {
+    var representation: [String : Any] {
+        var rep = ["name": name]
+        
+        if let id = id {
+            rep["id"] = id
+        }
+        
+        return rep
+    }
+}
