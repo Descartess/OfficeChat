@@ -22,7 +22,10 @@ class MainScreenCoordinator: Coordinator {
     }
     
     func start() {
-        guard let mainTabBarController = MainTabBarController.instantiate(from: .main) else { return }
+        guard
+            let mainTabBarController = MainTabBarController.instantiate(from: .main)
+        else { return }
+        
         mainTabBarController.mainScreenCoordinatorDelegate = self
         self.mainTabBarController = mainTabBarController
         self.mainTabBarController?.setUpViewControllers()

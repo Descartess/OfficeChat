@@ -51,9 +51,7 @@
                                 <rect key="frame" x="185.5" y="305" width="102.5" height="50"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bpH-ac-0LK"/>
-                                    <action selector="signInButton:" destination="8VC-pD-mAC" eventType="touchUpInside" id="cht-cH-LeW"/>
-                                    <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5mE-cQ-1WI"/>
+                                    <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bVW-rQ-a8g"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -172,12 +170,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHf-hD-gJ7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Add Bio" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHf-hD-gJ7">
                                 <rect key="frame" x="32" y="274" width="256" height="138"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="138" id="tOY-nx-vJr"/>
                                 </constraints>
-                                <string key="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid alias, expedita beatae quaerat delectus possimus quibusdam animi unde praesentium a eius, labore tempore tempora ab. Nemo labore at voluptate non.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -217,6 +214,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RDh-PB-evl"/>
                     </view>
+                    <connections>
+                        <outlet property="displayName" destination="UJn-0S-d3C" id="2DF-4a-AmK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4g-Nm-1F3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -225,19 +225,22 @@
         <!--Profile View Controller-->
         <scene sceneID="5W6-o5-kra">
             <objects>
-                <viewController id="a1t-xA-frQ" customClass="ProfileViewController" customModule="OfficeChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewControllerID" id="a1t-xA-frQ" customClass="ProfileViewController" customModule="OfficeChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="ProfileViewControllerID" id="3wj-jh-Qmi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Display Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JIB-pB-ReD">
-                                <rect key="frame" x="32" y="37" width="256" height="30"/>
+                                <rect key="frame" x="32" y="37" width="256" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hfE-W3-dfk"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="vcm-Rd-bze">
-                                <rect key="frame" x="79" y="92" width="162" height="162"/>
+                                <rect key="frame" x="79" y="112" width="162" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="7FS-xQ-xI4"/>
                                     <constraint firstAttribute="width" secondItem="vcm-Rd-bze" secondAttribute="height" multiplier="1:1" id="emf-0j-dbv"/>
@@ -245,7 +248,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Add Bio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTb-wf-bSC">
-                                <rect key="frame" x="32" y="279" width="256" height="75"/>
+                                <rect key="frame" x="32" y="299" width="256" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="mxE-Gq-Pvj"/>
                                 </constraints>
@@ -254,7 +257,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNf-ca-Kx3">
-                                <rect key="frame" x="143" y="403" width="34" height="30"/>
+                                <rect key="frame" x="143" y="423" width="34" height="10"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveProfile:" destination="a1t-xA-frQ" eventType="touchUpInside" id="whT-kT-HJO"/>
@@ -282,6 +285,7 @@
                         <outlet property="bioTextField" destination="vTb-wf-bSC" id="R2D-K6-v3F"/>
                         <outlet property="displayNameTextField" destination="JIB-pB-ReD" id="1pe-47-CFK"/>
                         <outlet property="profileImage" destination="vcm-Rd-bze" id="8QS-m6-xdh"/>
+                        <outlet property="saveButton" destination="KNf-ca-Kx3" id="KrQ-RB-RiO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlS-jj-2u3" userLabel="First Responder" sceneMemberID="firstResponder"/>

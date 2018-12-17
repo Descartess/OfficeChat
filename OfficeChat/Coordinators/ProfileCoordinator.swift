@@ -8,19 +8,38 @@
 
 import Foundation
 import UIKit
+import Firebase
+
+protocol ProfileCoordinatorDelegate: class {
+    func didCreateUserProfile()
+}
 
 class ProfileCoordinator: Coordinator {
     let presenter: UIWindow
+    var mainScreenCoordinator: MainScreenCoordinator?
+    var profileViewController: ProfileViewController?
     
     init(presenter: UIWindow) {
         self.presenter = presenter
     }
     
     func start() {
-        guard let profileViewController = ProfileViewController.instantiate(from: .main) else { return }
-        let profileViewModel = ProfileViewModel()
-        profileViewController.viewModel = profileViewModel
+        guard
+            let profileViewController = ProfileViewController.instantiate(from: .main),
+            let user = Auth.auth().currentUser
+        else { return }
+        
+        self.profileViewController = profileViewController
+        let profileViewModel = ProfileViewModel(user: user)
+        self.profileViewController?.viewModel = profileViewModel
         presenter.rootViewController = profileViewController
         presenter.makeKeyAndVisible()
+    }
+}
+
+extension ProfileCoordinator: ProfileCoordinatorDelegate {
+    func didCreateUserProfile() {
+        self.mainScreenCoordinator = MainScreenCoordinator(presenter: presenter)
+        self.mainScreenCoordinator?.start()
     }
 }

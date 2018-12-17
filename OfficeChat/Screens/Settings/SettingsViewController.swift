@@ -10,8 +10,13 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    var viewModel: SettingsViewModel?
+    @IBOutlet weak var displayName: UILabel!
     
+    var viewModel: SettingsViewModel? {
+        didSet {
+            bindViewModel()
+        }
+    }
     weak var delegate: MainScreenCoordinatorDelegate?
 
     @IBAction func signOutAction(_ sender: UIButton) {
@@ -28,6 +33,13 @@ class SettingsViewController: UIViewController {
         vm.deleteAccount()
     }
     
+    func bindViewModel() {
+        guard
+            isViewLoaded,
+            let vm = viewModel
+            else { return }
+        displayName.text = vm.user.displayName
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -35,6 +47,6 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: SettingsViewModelDelegate {
     func userDidSignOut() {
-        
+        delegate?.userDidSignOut()
     }
 }

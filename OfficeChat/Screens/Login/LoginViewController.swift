@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
             if !result {
                 self.showAlert(type: .invalidCredentials)
             } else {
-                self.navigateToChatListScreen()
+                self.authenticationCoordinatorDelegate?.didLogin()
             }
         }
     }
@@ -44,10 +44,12 @@ class LoginViewController: UIViewController {
             if !result {
                 self.showAlert(type: .invalidCredentials)
             } else {
-                self.navigateToChatListScreen()
+                self.authenticationCoordinatorDelegate?.didCreateNewUser()
             }
         }
     }
+    
+    var authenticationCoordinatorDelegate: AuthenticationCoordinatorDelegate?
     
     var viewModel: LoginViewModel? {
         didSet {
@@ -78,20 +80,7 @@ class LoginViewController: UIViewController {
     }
     
     func bindViewModel() {
-        guard
-            isViewLoaded,
-            let _ = viewModel
-        else { return }
-    }
-    
-    func navigateToChatListScreen() {
-        guard let chatListViewController = ChatListViewController.instantiate(from: .main),
-            let user = Auth.auth().currentUser
-            else { return }
-        let vm = ChatListViewModel(currentUser: user)
-        vm.delegate = chatListViewController
-        chatListViewController.viewModel = vm
-        self.present(chatListViewController, animated: false, completion: nil)
+
     }
     
     func showAlert(type: AlertReasons) {

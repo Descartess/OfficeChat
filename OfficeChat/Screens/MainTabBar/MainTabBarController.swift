@@ -37,8 +37,8 @@ class MainTabBarController: UITabBarController {
         
         let chatListNavigationController = UINavigationController(rootViewController: chatListVC)
 
-        chatListNavigationController.tabBarItem = UITabBarItem(title: "Chats", image: nil, tag: 0)
-        settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: nil, tag: 1)
+        chatListNavigationController.tabBarItem = UITabBarItem(title: "Chats", image: #imageLiteral(resourceName: "chats"), tag: 0)
+        settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: #imageLiteral(resourceName: "settings"), tag: 1)
         
         self.viewControllers = [chatListNavigationController, settingsVC]
         self.selectedIndex = indexOfSelectedVC

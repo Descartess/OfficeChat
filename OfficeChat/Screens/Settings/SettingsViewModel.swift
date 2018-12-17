@@ -11,20 +11,25 @@ import Firebase
 
 class SettingsViewModel {
     let user: User
+    
     init(user: User) {
         self.user = user
     }
+    
     weak var delegate: SettingsViewModelDelegate?
     
     func signOut() {
         do {
             try Auth.auth().signOut()
+            delegate?.userDidSignOut()
         } catch let error {
             print(error)
         }
     }
     
     func deleteAccount() {
-        user.delete(completion: nil)
+        user.delete { _ in
+            self.delegate?.userDidSignOut()
+        }
     }
 }

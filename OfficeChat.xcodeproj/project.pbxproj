@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		133F60A121C651FD0088603C /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133F60A021C651FD0088603C /* ProfileCoordinator.swift */; };
 		133F60A321C676C80088603C /* SettingsViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133F60A221C676C80088603C /* SettingsViewModelDelegate.swift */; };
+		133F60A621C68E830088603C /* ProfileViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133F60A521C68E830088603C /* ProfileViewModelDelegate.swift */; };
 		138CE4D321B7FBB20033CC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138CE4D221B7FBB20033CC05 /* AppDelegate.swift */; };
 		138CE4D821B7FBB20033CC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138CE4D621B7FBB20033CC05 /* Main.storyboard */; };
 		138CE4DA21B7FBB30033CC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 138CE4D921B7FBB30033CC05 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		125B726E6E498C7779DEC705 /* Pods-OfficeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.release.xcconfig"; sourceTree = "<group>"; };
 		133F60A021C651FD0088603C /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		133F60A221C676C80088603C /* SettingsViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelDelegate.swift; sourceTree = "<group>"; };
+		133F60A521C68E830088603C /* ProfileViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelDelegate.swift; sourceTree = "<group>"; };
 		138CE4CF21B7FBB20033CC05 /* OfficeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfficeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		138CE4D221B7FBB20033CC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		138CE4D721B7FBB20033CC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				13DA538921C5855B00395772 /* ProfileViewController.swift */,
 				13DA538F21C585B400395772 /* ProfileViewModel.swift */,
+				133F60A521C68E830088603C /* ProfileViewModelDelegate.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				13AC768921C4FBC9007AE87C /* UIColor+Extensions.swift in Sources */,
 				13AC768621C130F5007AE87C /* MainScreenCoordinator.swift in Sources */,
 				13AC768D21C5031E007AE87C /* UIScrollView+Extensions.swift in Sources */,
+				133F60A621C68E830088603C /* ProfileViewModelDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
