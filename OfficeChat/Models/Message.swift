@@ -26,17 +26,16 @@ struct Message: MessageType {
     
     let id: String?
     
-    init(user: User, content: String) {
-        sender = Sender(id: user.uid, displayName: "")
+    init(user: UserProtocol, content: String) {
+        sender = Sender(id: user.uid, displayName: user.displayName ?? "")
         self.content = content
         id = nil
         sentDate = Date()
         kind = .text(content)
     }
     
-    init?(document: QueryDocumentSnapshot) {
+    init?(document: DocumentProtocol) {
         let data = document.data()
-        
         guard
             let sentDate = data["created"] as? Date,
             let senderID = data["senderID"] as? String,
@@ -61,8 +60,8 @@ struct Message: MessageType {
         }
     }
     
-    init(user: User, image: UIImage) {
-        sender = Sender(id: user.uid, displayName: "")
+    init(user: UserProtocol, image: UIImage) {
+        sender = Sender(id: user.uid, displayName: user.displayName ?? "")
         self.image = image
         content = ""
         sentDate = Date()

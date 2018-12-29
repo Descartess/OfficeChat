@@ -31,5 +31,4 @@ extension UIImage {
         
         return UIGraphicsGetImageFromCurrentImageContext()
     }
-    
 }

@@ -81,6 +81,17 @@ extension ChatViewController: MessagesDataSource {
         guard let vm = viewModel else { return 0 }
         return vm.messages.count
     }
+    
+    func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        let name = message.sender.displayName
+        return NSAttributedString(
+            string: name,
+            attributes: [
+                .font: UIFont.preferredFont(forTextStyle: .caption1),
+                .foregroundColor: UIColor(white: 0.3, alpha: 1)
+            ]
+        )
+    }
 }
 
 extension ChatViewController: MessagesLayoutDelegate {
@@ -144,7 +155,6 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                                                   targetSize: size,
                                                   contentMode: .aspectFit,
                                                   options: nil) { result, info in
-                    
                     guard let image = result else {
                         return
                     }

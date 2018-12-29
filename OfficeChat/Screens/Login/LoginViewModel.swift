@@ -12,6 +12,11 @@ import FirebaseAuth
 class LoginViewModel {
     var email: String?
     var password: String?
+    
+    var authManager: AuthManagerProtocol {
+        return AppEnvironment.current.authManager
+    }
+    
     init() {
         self.email = ""
         self.password = ""
@@ -37,7 +42,7 @@ class LoginViewModel {
     }
     
     func signInUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { user, error in
+        authManager.signIn(withEmail: email, password: password) { user, error in
             if error != nil, user == nil {
                 completion(false)
             } else {
@@ -47,7 +52,7 @@ class LoginViewModel {
     }
     
     func createUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { user, _ in
+        authManager.createUser(withEmail: email, password: password) { user, _ in
             if user != nil {
                 completion(true)
             } else {

@@ -13,25 +13,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var applicationCoordinator: AppCoordinator?
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         FirebaseApp.configure()
         
-        showStartUpScreen()
+        self.applicationCoordinator = AppCoordinator(window: UIWindow(frame: UIScreen.main.bounds))
+        
+        applicationCoordinator?.start()
         return true
-    }
-    
-    func showStartUpScreen() {
-        guard
-            let loginViewController = LoginViewController.instantiate(from: .main)
-        else  { return }
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        
-        loginViewController.viewModel = LoginViewModel()
-        self.window?.rootViewController = loginViewController
-        window?.makeKeyAndVisible()
     }
 }

@@ -20,7 +20,7 @@ class ChatViewModel {
     var messageListener: ListenerRegistration?
     weak var delegate: ChatViewDelegate?
     
-    var user: User
+    var user: UserProtocol
     var channel: Channel
     
     let storage = Storage.storage().reference()
@@ -31,7 +31,7 @@ class ChatViewModel {
         }
     }
     
-    init?(user: User, channel: Channel) {
+    init?(user: UserProtocol, channel: Channel) {
         self.user = user
         self.channel = channel
         guard let id = channel.id else {
@@ -76,19 +76,16 @@ class ChatViewModel {
         }
     }
 
-    
-    func handleDocumentChange(_ change: DocumentChange) {
-        guard var message = Message(document: change.document) else { return }
+    func handleDocumentChange(_ change: DocumentChangeProtocol) {
+        guard var message = Message(document: change.data) else { return }
         switch change.type {
         case .added:
             if let url = message.downloadURL {
                 downloadImage(at: url) { [weak self] image in
-                    guard let self = self else {
-                        return
-                    }
-                    guard let image = image else {
-                        return
-                    }
+                    guard
+                        let self = self,
+                        let image = image
+                    else { return }
                     
                     message.image = image
                     self.insertNewMessage(message)
@@ -120,7 +117,7 @@ class ChatViewModel {
         
         let imageRef = storage.child(channelID).child(imageName)
             
-        imageRef.putData(data, metadata: metadata) { meta, _ in
+        imageRef.putData(data, metadata: metadata) { _, _ in
             imageRef.downloadURL { url, _ in
                 completion(url)
             }

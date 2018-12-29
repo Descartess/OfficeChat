@@ -7,9 +7,28 @@
 //
 
 import Foundation
+import Firebase
 
 class AppCoordinator: Coordinator {
+    let window: UIWindow
+    var mainTabBarCoordinator: MainScreenCoordinator?
+    var authenticationCoordinator: AuthenticationCoordinator?
+    
+    var authManager: AuthManagerProtocol {
+       return  AppEnvironment.current.authManager
+    }
+    
+    init(window: UIWindow) {
+        self.window = window
+    }
+    
     func start() {
-        
+        if authManager.activeUser != nil {
+            self.mainTabBarCoordinator = MainScreenCoordinator(presenter: window)
+            mainTabBarCoordinator?.start()
+        } else {
+            self.authenticationCoordinator = AuthenticationCoordinator(presenter: window)
+            authenticationCoordinator?.start()
+        }
     }
 }
