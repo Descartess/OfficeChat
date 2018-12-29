@@ -18,9 +18,19 @@ class ChatListViewModel {
     }
     weak var delegate: ChatListDelegate?
     
-    var channels = [Channel]()
+    var filterText = ""
     
-    var currentUser: User
+    var allChannels = [Channel]()
+    
+    var channels: [Channel] {
+        if filterText.isEmpty {
+            return self.allChannels
+        } else {
+            return self.allChannels.filter { $0.name.contains(filterText) }
+        }
+    }
+
+    var currentUser: UserProtocol
     
     var channelListener: ListenerRegistration?
     
@@ -28,7 +38,11 @@ class ChatListViewModel {
         channelListener?.remove()
     }
     
-    init(currentUser: User) {
+    func search(text: String) {
+        filterText = text
+    }
+    
+    init(currentUser: UserProtocol) {
         self.currentUser = currentUser
         channelListener = chatReference.addSnapshotListener { querySnapshot, _ in
             guard let snapshot = querySnapshot else { return }
@@ -47,13 +61,13 @@ class ChatListViewModel {
         }
     }
     
-    func handleDocumentChange(_ change: DocumentChange) {
-        guard let channel = Channel(document: change.document) else { return }
+    func handleDocumentChange(_ change: DocumentChangeProtocol) {
+        guard let channel = Channel(document: change.data) else { return }
         switch change.type {
         case .added:
-            guard !channels.contains(channel) else { return }
-            channels.append(channel)
-            channels.sort()
+            guard !allChannels.contains(channel) else { return }
+            allChannels.append(channel)
+            allChannels.sort()
             delegate?.added(channel: channel)
         case .modified:
             delegate?.modified(channel: channel)

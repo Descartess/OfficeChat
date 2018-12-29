@@ -26,8 +26,29 @@
       buildConfiguration = "Development"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "138CE4CE21B7FBB20033CC05"
+            BuildableName = "OfficeChat.app"
+            BlueprintName = "OfficeChat"
+            ReferencedContainer = "container:OfficeChat.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "138CE4E221B7FBB40033CC05"
+               BuildableName = "OfficeChatTests.xctest"
+               BlueprintName = "OfficeChatTests"
+               ReferencedContainer = "container:OfficeChat.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

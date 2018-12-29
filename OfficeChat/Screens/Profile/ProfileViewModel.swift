@@ -7,19 +7,38 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseFirestore
+import FirebaseAuth
 
 class ProfileViewModel {
-    let user: User
+    let user: UserProtocol
     
-    init(user: User) {
+    let db = Firestore.firestore()
+    
+    var contactReference: CollectionReference {
+        return db.collection("contacts")
+    }
+    
+    init(user: UserProtocol) {
         self.user = user
     }
     
     var isSaveEnabled: Bool = false
     
-    func updateProfile(displayName: String, photoURL: URL? = nil, completion: @escaping () -> Void) {
-        let userChangeRequest = user.createProfileChangeRequest()
+    func updateProfile(displayName: String,
+                       photoURL: URL? = nil,
+                       bio: String? = nil,
+                       completion: @escaping () -> Void) {
+        
+        let contact = Contact(id: user.uid,
+                              name: displayName,
+                              photoUrl: photoURL,
+                              bio: bio)
+        
+        self.contactReference.document(user.uid).setData(contact.representation)
+        
+        var userChangeRequest = user.startProfileChangeRequest()
+        
         userChangeRequest.displayName = displayName
         userChangeRequest.photoURL = photoURL
         userChangeRequest.commitChanges { _ in

@@ -7,20 +7,30 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseAuth
+import FirebaseFirestore
 
 class SettingsViewModel {
-    let user: User
+    let user: UserProtocol
     
-    init(user: User) {
+    init(user: UserProtocol) {
         self.user = user
+    }
+    var authManager: AuthManagerProtocol {
+        return AppEnvironment.current.authManager
+    }
+    
+    let db = Firestore.firestore()
+    
+    var contactReference: CollectionReference {
+        return db.collection("contacts")
     }
     
     weak var delegate: SettingsViewModelDelegate?
     
     func signOut() {
         do {
-            try Auth.auth().signOut()
+            try authManager.signOut()
             delegate?.userDidSignOut()
         } catch let error {
             print(error)
@@ -28,6 +38,8 @@ class SettingsViewModel {
     }
     
     func deleteAccount() {
+        contactReference.document(user.uid).delete()
+
         user.delete { _ in
             self.delegate?.userDidSignOut()
         }

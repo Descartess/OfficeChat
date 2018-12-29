@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130C1F1121D1D55800871E22 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130C1F1021D1D55800871E22 /* UIImageView+Extensions.swift */; };
+		132050EB21C8CC7900CF3C82 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132050EA21C8CC7900CF3C82 /* AppCoordinatorTests.swift */; };
+		132050EE21C8D04400CF3C82 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132050ED21C8D04400CF3C82 /* Mocks.swift */; };
+		132050F021C8D06000CF3C82 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132050EF21C8D06000CF3C82 /* Fixtures.swift */; };
+		132050F221C8D09900CF3C82 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132050F121C8D09900CF3C82 /* AppEnvironment.swift */; };
+		132050F721C8D1BD00CF3C82 /* AuthManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132050F621C8D1BD00CF3C82 /* AuthManagerProtocol.swift */; };
+		132050F921C8D73E00CF3C82 /* MockAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132050F821C8D73E00CF3C82 /* MockAuthManager.swift */; };
+		132050FB21C92B8000CF3C82 /* UserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132050FA21C92B7F00CF3C82 /* UserProtocol.swift */; };
+		132050FE21C92C6F00CF3C82 /* MockUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132050FD21C92C6F00CF3C82 /* MockUser.swift */; };
 		133F60A121C651FD0088603C /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133F60A021C651FD0088603C /* ProfileCoordinator.swift */; };
 		133F60A321C676C80088603C /* SettingsViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133F60A221C676C80088603C /* SettingsViewModelDelegate.swift */; };
 		133F60A621C68E830088603C /* ProfileViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133F60A521C68E830088603C /* ProfileViewModelDelegate.swift */; };
+		137FE0D721CF946D00FD34D3 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FE0D621CF946D00FD34D3 /* Contacts.swift */; };
+		137FE0DA21CFA43E00FD34D3 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FE0D921CFA43E00FD34D3 /* ContactsViewController.swift */; };
+		137FE0DC21CFA45A00FD34D3 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FE0DB21CFA45A00FD34D3 /* ContactsViewModel.swift */; };
+		137FE0DE21CFA47900FD34D3 /* ContactViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137FE0DD21CFA47900FD34D3 /* ContactViewModelDelegate.swift */; };
 		138CE4D321B7FBB20033CC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138CE4D221B7FBB20033CC05 /* AppDelegate.swift */; };
 		138CE4D821B7FBB20033CC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138CE4D621B7FBB20033CC05 /* Main.storyboard */; };
 		138CE4DA21B7FBB30033CC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 138CE4D921B7FBB30033CC05 /* Assets.xcassets */; };
 		138CE4DD21B7FBB30033CC05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 138CE4DB21B7FBB30033CC05 /* LaunchScreen.storyboard */; };
-		138CE4E821B7FBB40033CC05 /* OfficeChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138CE4E721B7FBB40033CC05 /* OfficeChatTests.swift */; };
 		138CE4F321B7FBB40033CC05 /* OfficeChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138CE4F221B7FBB40033CC05 /* OfficeChatUITests.swift */; };
 		138CE50121B80AFC0033CC05 /* ReadME.md in Resources */ = {isa = PBXBuildFile; fileRef = 138CE50021B80AFC0033CC05 /* ReadME.md */; };
 		13AC767521BFC48E007AE87C /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC767421BFC48E007AE87C /* Channel.swift */; };
@@ -38,6 +50,33 @@
 		13DA538C21C5857700395772 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA538B21C5857700395772 /* SettingsViewController.swift */; };
 		13DA538E21C5859500395772 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA538D21C5859500395772 /* SettingsViewModel.swift */; };
 		13DA539021C585B400395772 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA538F21C585B400395772 /* ProfileViewModel.swift */; };
+		13E4616721D4D1FD0026872B /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4616621D4D1FD0026872B /* LoginViewModelTests.swift */; };
+		13E4616921D4D9870026872B /* AuthenticationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4616821D4D9870026872B /* AuthenticationCoordinatorTests.swift */; };
+		13E4616B21D4D9D10026872B /* ProfileCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4616A21D4D9D10026872B /* ProfileCoordinatorTests.swift */; };
+		13E4616D21D4DA050026872B /* MainScreenCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4616C21D4DA050026872B /* MainScreenCoordinatorTests.swift */; };
+		13E4616F21D4E15F0026872B /* SettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4616E21D4E15F0026872B /* SettingsViewModelTests.swift */; };
+		13E4617121D4E1850026872B /* ProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4617021D4E1850026872B /* ProfileViewModelTests.swift */; };
+		13E4617321D4E1A00026872B /* ChatListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4617221D4E1A00026872B /* ChatListViewModelTests.swift */; };
+		13E4617521D4E1C30026872B /* ChatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4617421D4E1C30026872B /* ChatViewModelTests.swift */; };
+		13E4617721D4E56F0026872B /* DatabaseManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4617621D4E56F0026872B /* DatabaseManagerProtocol.swift */; };
+		13E4617A21D4E80C0026872B /* ChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4617921D4E80C0026872B /* ChannelTests.swift */; };
+		13E4617C21D4E8290026872B /* ContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4617B21D4E8290026872B /* ContactTests.swift */; };
+		13E4617E21D4E86A0026872B /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4617D21D4E86A0026872B /* MessageTests.swift */; };
+		13E4618021D4E8850026872B /* ImageMediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4617F21D4E8850026872B /* ImageMediaTests.swift */; };
+		13E4618321D4E99E0026872B /* CollectionReferenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4618221D4E99E0026872B /* CollectionReferenceProtocol.swift */; };
+		13E4618521D6161B0026872B /* DocumentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4618421D6161B0026872B /* DocumentProtocol.swift */; };
+		13E4618721D617390026872B /* MockDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4618621D617390026872B /* MockDocument.swift */; };
+		13E4618921D641FD0026872B /* DocumentChangeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4618821D641FD0026872B /* DocumentChangeProtocol.swift */; };
+		13E4618B21D645100026872B /* MockDocumentChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4618A21D645100026872B /* MockDocumentChange.swift */; };
+		13E4618E21D653CD0026872B /* octocat.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E4618D21D653CD0026872B /* octocat.png */; };
+		13E4619021D6A5840026872B /* MockUserChangeProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4618F21D6A5840026872B /* MockUserChangeProfileRequest.swift */; };
+		13E4619221D78CC70026872B /* ContactsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4619121D78CC70026872B /* ContactsViewModelTests.swift */; };
+		13E4619521D7967F0026872B /* ChatViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4619421D7967F0026872B /* ChatViewControllerTests.swift */; };
+		13E4619721D796A50026872B /* ContactsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4619621D796A50026872B /* ContactsViewControllerTests.swift */; };
+		13E4619921D798FE0026872B /* ProfileViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4619821D798FE0026872B /* ProfileViewControllerTests.swift */; };
+		13E4619B21D799430026872B /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4619A21D799430026872B /* LoginViewControllerTests.swift */; };
+		13E4619D21D7999B0026872B /* SettingsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4619C21D7999B0026872B /* SettingsViewControllerTests.swift */; };
+		13E4619F21D799CD0026872B /* ChatListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4619E21D799CD0026872B /* ChatListViewControllerTests.swift */; };
 		13E469D021BD21AB00BB8D18 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E469CF21BD21AB00BB8D18 /* LoginViewController.swift */; };
 		13E469D221BD302800BB8D18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13E469D121BD302800BB8D18 /* GoogleService-Info.plist */; };
 		13E469D521BD56F200BB8D18 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E469D421BD56F200BB8D18 /* LoginViewModel.swift */; };
@@ -45,9 +84,8 @@
 		13E469DB21BD81E900BB8D18 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E469DA21BD81E900BB8D18 /* Result.swift */; };
 		13E469E021BD95E600BB8D18 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E469DF21BD95E600BB8D18 /* ChatListViewController.swift */; };
 		13E469E221BD963500BB8D18 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E469E121BD963500BB8D18 /* ChatListViewModel.swift */; };
-		BBDF1D7DBB69C2D4C5E4B18F /* Pods_OfficeChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC852746AEED7BE34CD652AD /* Pods_OfficeChatTests.framework */; };
-		DD9CABF169298918565E67DE /* Pods_OfficeChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213D3BE80C9E72270D174C22 /* Pods_OfficeChat.framework */; };
-		F3967B0C4D31E314EB2E9C25 /* Pods_OfficeChat_OfficeChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C876500F9CDA701D6A3ED23D /* Pods_OfficeChat_OfficeChatTests.framework */; };
+		6277C12801E52703C40C951F /* Pods_OfficeChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4934BCB9AB506E93CFABD13 /* Pods_OfficeChatTests.framework */; };
+		E2C8F4871D01E5067655ADB9 /* Pods_OfficeChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD6323609E0EF9B59E296FC /* Pods_OfficeChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,10 +106,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		125B726E6E498C7779DEC705 /* Pods-OfficeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.release.xcconfig"; sourceTree = "<group>"; };
+		0F0FC9C686148D7D824995BD /* Pods-OfficeChat.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.development.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.development.xcconfig"; sourceTree = "<group>"; };
+		130C1F1021D1D55800871E22 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		132050EA21C8CC7900CF3C82 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
+		132050ED21C8D04400CF3C82 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		132050EF21C8D06000CF3C82 /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
+		132050F121C8D09900CF3C82 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		132050F621C8D1BD00CF3C82 /* AuthManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManagerProtocol.swift; sourceTree = "<group>"; };
+		132050F821C8D73E00CF3C82 /* MockAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthManager.swift; sourceTree = "<group>"; };
+		132050FA21C92B7F00CF3C82 /* UserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProtocol.swift; sourceTree = "<group>"; };
+		132050FD21C92C6F00CF3C82 /* MockUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUser.swift; sourceTree = "<group>"; };
 		133F60A021C651FD0088603C /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		133F60A221C676C80088603C /* SettingsViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelDelegate.swift; sourceTree = "<group>"; };
 		133F60A521C68E830088603C /* ProfileViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelDelegate.swift; sourceTree = "<group>"; };
+		137FE0D621CF946D00FD34D3 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		137FE0D921CFA43E00FD34D3 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		137FE0DB21CFA45A00FD34D3 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		137FE0DD21CFA47900FD34D3 /* ContactViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModelDelegate.swift; sourceTree = "<group>"; };
 		138CE4CF21B7FBB20033CC05 /* OfficeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfficeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		138CE4D221B7FBB20033CC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		138CE4D721B7FBB20033CC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,7 +130,6 @@
 		138CE4DC21B7FBB30033CC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		138CE4DE21B7FBB30033CC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		138CE4E321B7FBB40033CC05 /* OfficeChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OfficeChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		138CE4E721B7FBB40033CC05 /* OfficeChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeChatTests.swift; sourceTree = "<group>"; };
 		138CE4E921B7FBB40033CC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		138CE4EE21B7FBB40033CC05 /* OfficeChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OfficeChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		138CE4F221B7FBB40033CC05 /* OfficeChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeChatUITests.swift; sourceTree = "<group>"; };
@@ -106,6 +156,33 @@
 		13DA538B21C5857700395772 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		13DA538D21C5859500395772 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		13DA538F21C585B400395772 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		13E4616621D4D1FD0026872B /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		13E4616821D4D9870026872B /* AuthenticationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinatorTests.swift; sourceTree = "<group>"; };
+		13E4616A21D4D9D10026872B /* ProfileCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinatorTests.swift; sourceTree = "<group>"; };
+		13E4616C21D4DA050026872B /* MainScreenCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCoordinatorTests.swift; sourceTree = "<group>"; };
+		13E4616E21D4E15F0026872B /* SettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelTests.swift; sourceTree = "<group>"; };
+		13E4617021D4E1850026872B /* ProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelTests.swift; sourceTree = "<group>"; };
+		13E4617221D4E1A00026872B /* ChatListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModelTests.swift; sourceTree = "<group>"; };
+		13E4617421D4E1C30026872B /* ChatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModelTests.swift; sourceTree = "<group>"; };
+		13E4617621D4E56F0026872B /* DatabaseManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManagerProtocol.swift; sourceTree = "<group>"; };
+		13E4617921D4E80C0026872B /* ChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTests.swift; sourceTree = "<group>"; };
+		13E4617B21D4E8290026872B /* ContactTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTests.swift; sourceTree = "<group>"; };
+		13E4617D21D4E86A0026872B /* MessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
+		13E4617F21D4E8850026872B /* ImageMediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaTests.swift; sourceTree = "<group>"; };
+		13E4618221D4E99E0026872B /* CollectionReferenceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReferenceProtocol.swift; sourceTree = "<group>"; };
+		13E4618421D6161B0026872B /* DocumentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentProtocol.swift; sourceTree = "<group>"; };
+		13E4618621D617390026872B /* MockDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDocument.swift; sourceTree = "<group>"; };
+		13E4618821D641FD0026872B /* DocumentChangeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentChangeProtocol.swift; sourceTree = "<group>"; };
+		13E4618A21D645100026872B /* MockDocumentChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDocumentChange.swift; sourceTree = "<group>"; };
+		13E4618D21D653CD0026872B /* octocat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octocat.png; sourceTree = "<group>"; };
+		13E4618F21D6A5840026872B /* MockUserChangeProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserChangeProfileRequest.swift; sourceTree = "<group>"; };
+		13E4619121D78CC70026872B /* ContactsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModelTests.swift; sourceTree = "<group>"; };
+		13E4619421D7967F0026872B /* ChatViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewControllerTests.swift; sourceTree = "<group>"; };
+		13E4619621D796A50026872B /* ContactsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewControllerTests.swift; sourceTree = "<group>"; };
+		13E4619821D798FE0026872B /* ProfileViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerTests.swift; sourceTree = "<group>"; };
+		13E4619A21D799430026872B /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
+		13E4619C21D7999B0026872B /* SettingsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerTests.swift; sourceTree = "<group>"; };
+		13E4619E21D799CD0026872B /* ChatListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewControllerTests.swift; sourceTree = "<group>"; };
 		13E469CF21BD21AB00BB8D18 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		13E469D121BD302800BB8D18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13E469D321BD341200BB8D18 /* OfficeChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OfficeChat.entitlements; sourceTree = "<group>"; };
@@ -114,20 +191,15 @@
 		13E469DA21BD81E900BB8D18 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		13E469DF21BD95E600BB8D18 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		13E469E121BD963500BB8D18 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
-		213D3BE80C9E72270D174C22 /* Pods_OfficeChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfficeChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2454BADC3A497F35301A361B /* Pods-OfficeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.debug.xcconfig"; sourceTree = "<group>"; };
-		34BA4D63AE81DBD5E59C63AD /* Pods-OfficeChat-OfficeChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat-OfficeChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat-OfficeChatTests/Pods-OfficeChat-OfficeChatTests.release.xcconfig"; sourceTree = "<group>"; };
-		414C15D9E28DF0FE7843C789 /* Pods-OfficeChat-OfficeChatTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat-OfficeChatTests.development.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat-OfficeChatTests/Pods-OfficeChat-OfficeChatTests.development.xcconfig"; sourceTree = "<group>"; };
-		41C0869520E4B30C65530905 /* Pods-OfficeChatTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChatTests.production.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests.production.xcconfig"; sourceTree = "<group>"; };
-		5C210F121954DAF90BB29E1D /* Pods-OfficeChat-OfficeChatTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat-OfficeChatTests.production.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat-OfficeChatTests/Pods-OfficeChat-OfficeChatTests.production.xcconfig"; sourceTree = "<group>"; };
-		63183BEF6B139C3C217B1705 /* Pods-OfficeChat-OfficeChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat-OfficeChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat-OfficeChatTests/Pods-OfficeChat-OfficeChatTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6AE75AB2A5431C30A2F38946 /* Pods-OfficeChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests.release.xcconfig"; sourceTree = "<group>"; };
-		8B2AC807FA75E79370C56BE8 /* Pods-OfficeChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8C725D9BC3BBB3113D3C6A37 /* Pods-OfficeChat.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.production.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.production.xcconfig"; sourceTree = "<group>"; };
-		9C6934039DEB7DE9F00914F9 /* Pods-OfficeChatTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChatTests.development.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests.development.xcconfig"; sourceTree = "<group>"; };
-		C876500F9CDA701D6A3ED23D /* Pods_OfficeChat_OfficeChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfficeChat_OfficeChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAECCEC6A1CCDFE12A80DAB6 /* Pods-OfficeChat.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.development.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.development.xcconfig"; sourceTree = "<group>"; };
-		FC852746AEED7BE34CD652AD /* Pods_OfficeChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfficeChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63CBE35E3F23E6B742011A74 /* Pods-OfficeChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		88E8B77FFEEEA1CB68B9C893 /* Pods-OfficeChatTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChatTests.production.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests.production.xcconfig"; sourceTree = "<group>"; };
+		AB1E2C6B61416420E7919655 /* Pods-OfficeChatTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChatTests.development.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests.development.xcconfig"; sourceTree = "<group>"; };
+		C69D1E997E17121E5E81B103 /* Pods-OfficeChat.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.production.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.production.xcconfig"; sourceTree = "<group>"; };
+		CFC321D7C7B5461846C4B596 /* Pods-OfficeChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		D4934BCB9AB506E93CFABD13 /* Pods_OfficeChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfficeChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEB82705147CAA199227895D /* Pods-OfficeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.debug.xcconfig"; sourceTree = "<group>"; };
+		F9A4E914B031D710C3B5D14F /* Pods-OfficeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.release.xcconfig"; sourceTree = "<group>"; };
+		FDD6323609E0EF9B59E296FC /* Pods_OfficeChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfficeChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD9CABF169298918565E67DE /* Pods_OfficeChat.framework in Frameworks */,
+				E2C8F4871D01E5067655ADB9 /* Pods_OfficeChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,8 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3967B0C4D31E314EB2E9C25 /* Pods_OfficeChat_OfficeChatTests.framework in Frameworks */,
-				BBDF1D7DBB69C2D4C5E4B18F /* Pods_OfficeChatTests.framework in Frameworks */,
+				6277C12801E52703C40C951F /* Pods_OfficeChatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,23 +229,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0FFEDA3A34CF6485D9F6D5D0 /* Pods */ = {
+		132050E621C8CBE400CF3C82 /* CoordinatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				2454BADC3A497F35301A361B /* Pods-OfficeChat.debug.xcconfig */,
-				CAECCEC6A1CCDFE12A80DAB6 /* Pods-OfficeChat.development.xcconfig */,
-				125B726E6E498C7779DEC705 /* Pods-OfficeChat.release.xcconfig */,
-				8C725D9BC3BBB3113D3C6A37 /* Pods-OfficeChat.production.xcconfig */,
-				63183BEF6B139C3C217B1705 /* Pods-OfficeChat-OfficeChatTests.debug.xcconfig */,
-				414C15D9E28DF0FE7843C789 /* Pods-OfficeChat-OfficeChatTests.development.xcconfig */,
-				34BA4D63AE81DBD5E59C63AD /* Pods-OfficeChat-OfficeChatTests.release.xcconfig */,
-				5C210F121954DAF90BB29E1D /* Pods-OfficeChat-OfficeChatTests.production.xcconfig */,
-				8B2AC807FA75E79370C56BE8 /* Pods-OfficeChatTests.debug.xcconfig */,
-				9C6934039DEB7DE9F00914F9 /* Pods-OfficeChatTests.development.xcconfig */,
-				6AE75AB2A5431C30A2F38946 /* Pods-OfficeChatTests.release.xcconfig */,
-				41C0869520E4B30C65530905 /* Pods-OfficeChatTests.production.xcconfig */,
+				132050EA21C8CC7900CF3C82 /* AppCoordinatorTests.swift */,
+				13E4616821D4D9870026872B /* AuthenticationCoordinatorTests.swift */,
+				13E4616A21D4D9D10026872B /* ProfileCoordinatorTests.swift */,
+				13E4616C21D4DA050026872B /* MainScreenCoordinatorTests.swift */,
 			);
-			name = Pods;
+			path = CoordinatorTests;
+			sourceTree = "<group>";
+		};
+		132050E821C8CC2F00CF3C82 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				13E4616621D4D1FD0026872B /* LoginViewModelTests.swift */,
+				13E4616E21D4E15F0026872B /* SettingsViewModelTests.swift */,
+				13E4617021D4E1850026872B /* ProfileViewModelTests.swift */,
+				13E4617221D4E1A00026872B /* ChatListViewModelTests.swift */,
+				13E4617421D4E1C30026872B /* ChatViewModelTests.swift */,
+				13E4619121D78CC70026872B /* ContactsViewModelTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		132050EC21C8D02000CF3C82 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				132050ED21C8D04400CF3C82 /* Mocks.swift */,
+				132050EF21C8D06000CF3C82 /* Fixtures.swift */,
+				132050F821C8D73E00CF3C82 /* MockAuthManager.swift */,
+				132050FD21C92C6F00CF3C82 /* MockUser.swift */,
+				13E4618621D617390026872B /* MockDocument.swift */,
+				13E4618A21D645100026872B /* MockDocumentChange.swift */,
+				13E4618F21D6A5840026872B /* MockUserChangeProfileRequest.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		132050F521C8D18400CF3C82 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				132050F621C8D1BD00CF3C82 /* AuthManagerProtocol.swift */,
+				132050FA21C92B7F00CF3C82 /* UserProtocol.swift */,
+				13E4617621D4E56F0026872B /* DatabaseManagerProtocol.swift */,
+				13E4618221D4E99E0026872B /* CollectionReferenceProtocol.swift */,
+				13E4618421D6161B0026872B /* DocumentProtocol.swift */,
+				13E4618821D641FD0026872B /* DocumentChangeProtocol.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		137FE0D821CFA41400FD34D3 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				137FE0D921CFA43E00FD34D3 /* ContactsViewController.swift */,
+				137FE0DB21CFA45A00FD34D3 /* ContactsViewModel.swift */,
+				137FE0DD21CFA47900FD34D3 /* ContactViewModelDelegate.swift */,
+			);
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 		138CE4C621B7FBB20033CC05 = {
@@ -186,8 +299,8 @@
 				138CE4E621B7FBB40033CC05 /* OfficeChatTests */,
 				138CE4F121B7FBB40033CC05 /* OfficeChatUITests */,
 				138CE4D021B7FBB20033CC05 /* Products */,
-				0FFEDA3A34CF6485D9F6D5D0 /* Pods */,
-				E768487703F222DFB2C16093 /* Frameworks */,
+				39B4D6716F2D6E2CAC65ABA9 /* Pods */,
+				285A48F77A31ED3B132D42BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,6 +317,7 @@
 		138CE4D121B7FBB20033CC05 /* OfficeChat */ = {
 			isa = PBXGroup;
 			children = (
+				132050F521C8D18400CF3C82 /* DependencyInjection */,
 				13AC767E21C12DF1007AE87C /* Coordinators */,
 				13E469D921BD81D400BB8D18 /* Utility */,
 				13E469D621BD744800BB8D18 /* Extensions */,
@@ -216,6 +330,7 @@
 				138CE4D921B7FBB30033CC05 /* Assets.xcassets */,
 				138CE4DB21B7FBB30033CC05 /* LaunchScreen.storyboard */,
 				138CE4DE21B7FBB30033CC05 /* Info.plist */,
+				132050F121C8D09900CF3C82 /* AppEnvironment.swift */,
 			);
 			path = OfficeChat;
 			sourceTree = "<group>";
@@ -223,7 +338,12 @@
 		138CE4E621B7FBB40033CC05 /* OfficeChatTests */ = {
 			isa = PBXGroup;
 			children = (
-				138CE4E721B7FBB40033CC05 /* OfficeChatTests.swift */,
+				13E4619321D792400026872B /* ViewControllerTests */,
+				13E4618C21D653A30026872B /* Assets */,
+				13E4617821D4E7020026872B /* ModelTests */,
+				132050EC21C8D02000CF3C82 /* DependencyInjection */,
+				132050E821C8CC2F00CF3C82 /* ViewModelTests */,
+				132050E621C8CBE400CF3C82 /* CoordinatorTests */,
 				138CE4E921B7FBB40033CC05 /* Info.plist */,
 			);
 			path = OfficeChatTests;
@@ -278,12 +398,45 @@
 			path = MainTabBar;
 			sourceTree = "<group>";
 		};
+		13E4617821D4E7020026872B /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				13E4617921D4E80C0026872B /* ChannelTests.swift */,
+				13E4617B21D4E8290026872B /* ContactTests.swift */,
+				13E4617D21D4E86A0026872B /* MessageTests.swift */,
+				13E4617F21D4E8850026872B /* ImageMediaTests.swift */,
+			);
+			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		13E4618C21D653A30026872B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				13E4618D21D653CD0026872B /* octocat.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		13E4619321D792400026872B /* ViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				13E4619421D7967F0026872B /* ChatViewControllerTests.swift */,
+				13E4619621D796A50026872B /* ContactsViewControllerTests.swift */,
+				13E4619821D798FE0026872B /* ProfileViewControllerTests.swift */,
+				13E4619A21D799430026872B /* LoginViewControllerTests.swift */,
+				13E4619C21D7999B0026872B /* SettingsViewControllerTests.swift */,
+				13E4619E21D799CD0026872B /* ChatListViewControllerTests.swift */,
+			);
+			path = ViewControllerTests;
+			sourceTree = "<group>";
+		};
 		13E469C821BD1B1A00BB8D18 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				13AC767421BFC48E007AE87C /* Channel.swift */,
 				13AC767C21C129A2007AE87C /* Message.swift */,
 				13DA538221C5765F00395772 /* ImageMedia.swift */,
+				137FE0D621CF946D00FD34D3 /* Contacts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,9 +444,10 @@
 		13E469CB21BD1B6500BB8D18 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				13DA538421C579EC00395772 /* Settings */,
+				137FE0D821CFA41400FD34D3 /* Contacts */,
 				13DA538621C5849500395772 /* MainTabBar */,
 				13DA538521C57A1100395772 /* Profile */,
-				13DA538421C579EC00395772 /* Settings */,
 				13E469CE21BD1B9900BB8D18 /* ChatList */,
 				13E469CD21BD1B8D00BB8D18 /* Chat */,
 				13E469CC21BD1B7B00BB8D18 /* Login */,
@@ -337,6 +491,7 @@
 				13AC768821C4FBC9007AE87C /* UIColor+Extensions.swift */,
 				13AC768C21C5031E007AE87C /* UIScrollView+Extensions.swift */,
 				13DA538021C5397500395772 /* UImage+Extensions.swift */,
+				130C1F1021D1D55800871E22 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -350,14 +505,28 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		E768487703F222DFB2C16093 /* Frameworks */ = {
+		285A48F77A31ED3B132D42BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				213D3BE80C9E72270D174C22 /* Pods_OfficeChat.framework */,
-				C876500F9CDA701D6A3ED23D /* Pods_OfficeChat_OfficeChatTests.framework */,
-				FC852746AEED7BE34CD652AD /* Pods_OfficeChatTests.framework */,
+				FDD6323609E0EF9B59E296FC /* Pods_OfficeChat.framework */,
+				D4934BCB9AB506E93CFABD13 /* Pods_OfficeChatTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39B4D6716F2D6E2CAC65ABA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DEB82705147CAA199227895D /* Pods-OfficeChat.debug.xcconfig */,
+				0F0FC9C686148D7D824995BD /* Pods-OfficeChat.development.xcconfig */,
+				F9A4E914B031D710C3B5D14F /* Pods-OfficeChat.release.xcconfig */,
+				C69D1E997E17121E5E81B103 /* Pods-OfficeChat.production.xcconfig */,
+				63CBE35E3F23E6B742011A74 /* Pods-OfficeChatTests.debug.xcconfig */,
+				AB1E2C6B61416420E7919655 /* Pods-OfficeChatTests.development.xcconfig */,
+				CFC321D7C7B5461846C4B596 /* Pods-OfficeChatTests.release.xcconfig */,
+				88E8B77FFEEEA1CB68B9C893 /* Pods-OfficeChatTests.production.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,13 +536,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 138CE4F721B7FBB40033CC05 /* Build configuration list for PBXNativeTarget "OfficeChat" */;
 			buildPhases = (
-				D4E1095243AFD162951FD164 /* [CP] Check Pods Manifest.lock */,
+				CAB256F8DD16141B1BB7A474 /* [CP] Check Pods Manifest.lock */,
 				138CE4CB21B7FBB20033CC05 /* Sources */,
 				138CE4CC21B7FBB20033CC05 /* Frameworks */,
 				138CE4CD21B7FBB20033CC05 /* Resources */,
 				1327999D21B93C370039977C /* ShellScript */,
-				3967CDD9830AA199E10516C2 /* [CP] Embed Pods Frameworks */,
-				0EA928FB9D3B299510A5CF5B /* [CP] Copy Pods Resources */,
+				40F6BA6809D7048D5B53BF07 /* [CP] Embed Pods Frameworks */,
+				3BE37C3AC3145C4EDA4C37C3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -388,11 +557,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 138CE4FA21B7FBB40033CC05 /* Build configuration list for PBXNativeTarget "OfficeChatTests" */;
 			buildPhases = (
-				60FF2A6C9904F0634FADA05C /* [CP] Check Pods Manifest.lock */,
+				3ADF17F20744492490D7FBB5 /* [CP] Check Pods Manifest.lock */,
 				138CE4DF21B7FBB40033CC05 /* Sources */,
 				138CE4E021B7FBB40033CC05 /* Frameworks */,
 				138CE4E121B7FBB40033CC05 /* Resources */,
-				4B66E34B29429B2A36607CAA /* [CP] Embed Pods Frameworks */,
+				8E0638318748B945001EC766 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -442,6 +611,7 @@
 					};
 					138CE4E221B7FBB40033CC05 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 138CE4CE21B7FBB20033CC05;
 					};
 					138CE4ED21B7FBB40033CC05 = {
@@ -488,6 +658,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13E4618E21D653CD0026872B /* octocat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +672,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0EA928FB9D3B299510A5CF5B /* [CP] Copy Pods Resources */ = {
+		1327999D21B93C370039977C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		3ADF17F20744492490D7FBB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OfficeChatTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BE37C3AC3145C4EDA4C37C3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -523,24 +733,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1327999D21B93C370039977C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		3967CDD9830AA199E10516C2 /* [CP] Embed Pods Frameworks */ = {
+		40F6BA6809D7048D5B53BF07 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -580,7 +773,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4B66E34B29429B2A36607CAA /* [CP] Embed Pods Frameworks */ = {
+		8E0638318748B945001EC766 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -604,29 +797,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OfficeChatTests/Pods-OfficeChatTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		60FF2A6C9904F0634FADA05C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OfficeChatTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D4E1095243AFD162951FD164 /* [CP] Check Pods Manifest.lock */ = {
+		CAB256F8DD16141B1BB7A474 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -657,6 +828,7 @@
 			files = (
 				133F60A321C676C80088603C /* SettingsViewModelDelegate.swift in Sources */,
 				13DA538321C5765F00395772 /* ImageMedia.swift in Sources */,
+				13E4618921D641FD0026872B /* DocumentChangeProtocol.swift in Sources */,
 				13AC768F21C51595007AE87C /* JSONRepresentation.swift in Sources */,
 				13DA538121C5397500395772 /* UImage+Extensions.swift in Sources */,
 				13DA539021C585B400395772 /* ProfileViewModel.swift in Sources */,
@@ -665,22 +837,33 @@
 				13AC768021C12E0F007AE87C /* Coordinator.swift in Sources */,
 				13DA538A21C5855B00395772 /* ProfileViewController.swift in Sources */,
 				133F60A121C651FD0088603C /* ProfileCoordinator.swift in Sources */,
+				137FE0D721CF946D00FD34D3 /* Contacts.swift in Sources */,
+				13E4617721D4E56F0026872B /* DatabaseManagerProtocol.swift in Sources */,
 				13DA538821C584D300395772 /* MainTabBarController.swift in Sources */,
+				132050FB21C92B8000CF3C82 /* UserProtocol.swift in Sources */,
 				13DA538C21C5857700395772 /* SettingsViewController.swift in Sources */,
 				13E469D821BD748200BB8D18 /* UIViewController+Extensions.swift in Sources */,
+				137FE0DE21CFA47900FD34D3 /* ContactViewModelDelegate.swift in Sources */,
 				13AC768221C12E43007AE87C /* AppCoordinator.swift in Sources */,
 				13AC768B21C50066007AE87C /* ChatViewDelegate.swift in Sources */,
 				13AC767721BFD813007AE87C /* ChatListDelegate.swift in Sources */,
 				13AC768421C13096007AE87C /* AuthenticationCoordinator.swift in Sources */,
 				13E469DB21BD81E900BB8D18 /* Result.swift in Sources */,
 				13E469D021BD21AB00BB8D18 /* LoginViewController.swift in Sources */,
+				132050F721C8D1BD00CF3C82 /* AuthManagerProtocol.swift in Sources */,
 				13E469E221BD963500BB8D18 /* ChatListViewModel.swift in Sources */,
+				130C1F1121D1D55800871E22 /* UIImageView+Extensions.swift in Sources */,
 				13E469D521BD56F200BB8D18 /* LoginViewModel.swift in Sources */,
+				13E4618321D4E99E0026872B /* CollectionReferenceProtocol.swift in Sources */,
 				13AC767921C128BE007AE87C /* ChatViewController.swift in Sources */,
+				137FE0DC21CFA45A00FD34D3 /* ContactsViewModel.swift in Sources */,
+				132050F221C8D09900CF3C82 /* AppEnvironment.swift in Sources */,
 				13AC767D21C129A2007AE87C /* Message.swift in Sources */,
 				13AC767B21C12928007AE87C /* ChatViewModel.swift in Sources */,
 				13DA538E21C5859500395772 /* SettingsViewModel.swift in Sources */,
+				137FE0DA21CFA43E00FD34D3 /* ContactsViewController.swift in Sources */,
 				138CE4D321B7FBB20033CC05 /* AppDelegate.swift in Sources */,
+				13E4618521D6161B0026872B /* DocumentProtocol.swift in Sources */,
 				13AC768921C4FBC9007AE87C /* UIColor+Extensions.swift in Sources */,
 				13AC768621C130F5007AE87C /* MainScreenCoordinator.swift in Sources */,
 				13AC768D21C5031E007AE87C /* UIScrollView+Extensions.swift in Sources */,
@@ -692,7 +875,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				138CE4E821B7FBB40033CC05 /* OfficeChatTests.swift in Sources */,
+				132050FE21C92C6F00CF3C82 /* MockUser.swift in Sources */,
+				13E4617A21D4E80C0026872B /* ChannelTests.swift in Sources */,
+				13E4618721D617390026872B /* MockDocument.swift in Sources */,
+				13E4617C21D4E8290026872B /* ContactTests.swift in Sources */,
+				132050EB21C8CC7900CF3C82 /* AppCoordinatorTests.swift in Sources */,
+				13E4616921D4D9870026872B /* AuthenticationCoordinatorTests.swift in Sources */,
+				13E4617E21D4E86A0026872B /* MessageTests.swift in Sources */,
+				132050EE21C8D04400CF3C82 /* Mocks.swift in Sources */,
+				132050F021C8D06000CF3C82 /* Fixtures.swift in Sources */,
+				13E4616B21D4D9D10026872B /* ProfileCoordinatorTests.swift in Sources */,
+				13E4619021D6A5840026872B /* MockUserChangeProfileRequest.swift in Sources */,
+				13E4619721D796A50026872B /* ContactsViewControllerTests.swift in Sources */,
+				13E4618B21D645100026872B /* MockDocumentChange.swift in Sources */,
+				13E4619D21D7999B0026872B /* SettingsViewControllerTests.swift in Sources */,
+				13E4619B21D799430026872B /* LoginViewControllerTests.swift in Sources */,
+				13E4619521D7967F0026872B /* ChatViewControllerTests.swift in Sources */,
+				13E4617321D4E1A00026872B /* ChatListViewModelTests.swift in Sources */,
+				13E4617121D4E1850026872B /* ProfileViewModelTests.swift in Sources */,
+				13E4616721D4D1FD0026872B /* LoginViewModelTests.swift in Sources */,
+				13E4616F21D4E15F0026872B /* SettingsViewModelTests.swift in Sources */,
+				13E4619221D78CC70026872B /* ContactsViewModelTests.swift in Sources */,
+				132050F921C8D73E00CF3C82 /* MockAuthManager.swift in Sources */,
+				13E4619921D798FE0026872B /* ProfileViewControllerTests.swift in Sources */,
+				13E4617521D4E1C30026872B /* ChatViewModelTests.swift in Sources */,
+				13E4619F21D799CD0026872B /* ChatListViewControllerTests.swift in Sources */,
+				13E4616D21D4DA050026872B /* MainScreenCoordinatorTests.swift in Sources */,
+				13E4618021D4E8850026872B /* ImageMediaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -857,7 +1066,7 @@
 		};
 		138CE4F821B7FBB40033CC05 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2454BADC3A497F35301A361B /* Pods-OfficeChat.debug.xcconfig */;
+			baseConfigurationReference = DEB82705147CAA199227895D /* Pods-OfficeChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OfficeChat/OfficeChat.entitlements;
@@ -877,7 +1086,7 @@
 		};
 		138CE4F921B7FBB40033CC05 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 125B726E6E498C7779DEC705 /* Pods-OfficeChat.release.xcconfig */;
+			baseConfigurationReference = F9A4E914B031D710C3B5D14F /* Pods-OfficeChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OfficeChat/OfficeChat.entitlements;
@@ -897,10 +1106,10 @@
 		};
 		138CE4FB21B7FBB40033CC05 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B2AC807FA75E79370C56BE8 /* Pods-OfficeChatTests.debug.xcconfig */;
+			baseConfigurationReference = 63CBE35E3F23E6B742011A74 /* Pods-OfficeChatTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAU58TE88U;
 				INFOPLIST_FILE = OfficeChatTests/Info.plist;
@@ -911,6 +1120,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nyondo.OfficeChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OfficeChatTests/CoordinatorTests/OfficeChatTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OfficeChat.app/OfficeChat";
@@ -919,10 +1130,10 @@
 		};
 		138CE4FC21B7FBB40033CC05 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6AE75AB2A5431C30A2F38946 /* Pods-OfficeChatTests.release.xcconfig */;
+			baseConfigurationReference = CFC321D7C7B5461846C4B596 /* Pods-OfficeChatTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAU58TE88U;
 				INFOPLIST_FILE = OfficeChatTests/Info.plist;
@@ -933,6 +1144,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nyondo.OfficeChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OfficeChatTests/CoordinatorTests/OfficeChatTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OfficeChat.app/OfficeChat";
@@ -1042,7 +1254,7 @@
 		};
 		138CE50321B81CCA0033CC05 /* Development */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAECCEC6A1CCDFE12A80DAB6 /* Pods-OfficeChat.development.xcconfig */;
+			baseConfigurationReference = 0F0FC9C686148D7D824995BD /* Pods-OfficeChat.development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OfficeChat/OfficeChat.entitlements;
@@ -1062,10 +1274,10 @@
 		};
 		138CE50421B81CCA0033CC05 /* Development */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C6934039DEB7DE9F00914F9 /* Pods-OfficeChatTests.development.xcconfig */;
+			baseConfigurationReference = AB1E2C6B61416420E7919655 /* Pods-OfficeChatTests.development.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAU58TE88U;
 				INFOPLIST_FILE = OfficeChatTests/Info.plist;
@@ -1076,6 +1288,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nyondo.OfficeChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OfficeChatTests/CoordinatorTests/OfficeChatTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OfficeChat.app/OfficeChat";
@@ -1159,7 +1373,7 @@
 		};
 		138CE50721B81CE80033CC05 /* Production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C725D9BC3BBB3113D3C6A37 /* Pods-OfficeChat.production.xcconfig */;
+			baseConfigurationReference = C69D1E997E17121E5E81B103 /* Pods-OfficeChat.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OfficeChat/OfficeChat.entitlements;
@@ -1179,10 +1393,10 @@
 		};
 		138CE50821B81CE80033CC05 /* Production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41C0869520E4B30C65530905 /* Pods-OfficeChatTests.production.xcconfig */;
+			baseConfigurationReference = 88E8B77FFEEEA1CB68B9C893 /* Pods-OfficeChatTests.production.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAU58TE88U;
 				INFOPLIST_FILE = OfficeChatTests/Info.plist;
@@ -1193,6 +1407,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nyondo.OfficeChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OfficeChatTests/CoordinatorTests/OfficeChatTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OfficeChat.app/OfficeChat";

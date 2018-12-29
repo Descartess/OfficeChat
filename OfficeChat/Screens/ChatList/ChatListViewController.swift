@@ -10,8 +10,11 @@ import Foundation
 import UIKit
 
 class ChatListViewController: UIViewController {
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var chatListTableView: UITableView!
+    let searchBar =  UISearchBar()
+    
+    var showSearchBar = false
+    
     var currentAlertController: UIAlertController?
     
     var viewModel: ChatListViewModel? {
@@ -25,17 +28,22 @@ class ChatListViewController: UIViewController {
         chatListTableView.delegate = self
         chatListTableView.dataSource = self
         
-        title = "Chats"
+        searchBar.delegate = self
+        
         setUpNavBar()
     }
     
     func setUpNavBar() {
+        title = "Chats"
+        navigationItem.titleView = nil
         navigationItem.leftBarButtonItem = leftBarButtonItem()
         navigationItem.rightBarButtonItem = rightBarButtonItem()
     }
     
     func rightBarButtonItem() -> UIBarButtonItem {
-        let rightBar = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil)
+        let rightBar = UIBarButtonItem(barButtonSystemItem: .search,
+                                       target: self,
+                                       action: #selector(searchButtonPressed))
         return rightBar
     }
     
@@ -44,12 +52,33 @@ class ChatListViewController: UIViewController {
         return leftBar
     }
     
+    func rightCancelBarButtonItem() -> UIBarButtonItem {
+        let cancelButton = UIBarButtonItem(title: "Cancel",
+                                           style: .plain,
+                                           target: self,
+                                           action: #selector(cancelButtonPressed))
+        return cancelButton
+    }
+    
     func bindViewModel() {
     
     }
     
+    @objc func cancelButtonPressed() {
+        showSearchBar = !showSearchBar
+        viewModel?.search(text: "")
+        setUpNavBar()
+    }
+    
     @objc func searchButtonPressed() {
-        
+        showSearchBar = !showSearchBar
+        if showSearchBar {
+            navigationItem.leftBarButtonItem = nil
+            navigationItem.rightBarButtonItem = rightCancelBarButtonItem()
+            navigationItem.titleView = searchBar
+        } else {
+            setUpNavBar()
+        }
     }
     
     @objc func addButtonPressed() {
@@ -146,5 +175,11 @@ extension ChatListViewController: ChatListDelegate {
             let index = vm.channels.index(of: channel)
             else { return }
         chatListTableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
+}
+extension ChatListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel?.search(text: searchText)
+        chatListTableView.reloadData()
     }
 }

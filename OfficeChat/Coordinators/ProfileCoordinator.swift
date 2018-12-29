@@ -24,9 +24,10 @@ class ProfileCoordinator: Coordinator {
     }
     
     func start() {
+        let authManager = AppEnvironment.current.authManager
         guard
             let profileViewController = ProfileViewController.instantiate(from: .main),
-            let user = Auth.auth().currentUser
+            let user = authManager.activeUser
         else { return }
         
         self.profileViewController = profileViewController

@@ -85,6 +85,46 @@
             </objects>
             <point key="canvasLocation" x="199" y="33"/>
         </scene>
+        <!--Contacts View Controller-->
+        <scene sceneID="sJd-nJ-ILf">
+            <objects>
+                <viewController storyboardIdentifier="ContactsViewControllerID" id="ZdT-vZ-1yg" customClass="ContactsViewController" customModule="OfficeChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Nn-AX-2NZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CA5-03-rIs">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="udk-jc-sie">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="udk-jc-sie" id="kfI-PW-wtE">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CA5-03-rIs" firstAttribute="top" secondItem="BTG-Mv-ZpQ" secondAttribute="top" id="BRs-sQ-Y6i"/>
+                            <constraint firstItem="BTG-Mv-ZpQ" firstAttribute="trailing" secondItem="CA5-03-rIs" secondAttribute="trailing" id="Lb9-iO-6tH"/>
+                            <constraint firstItem="CA5-03-rIs" firstAttribute="leading" secondItem="BTG-Mv-ZpQ" secondAttribute="leading" id="LxX-FJ-mXq"/>
+                            <constraint firstItem="BTG-Mv-ZpQ" firstAttribute="bottom" secondItem="CA5-03-rIs" secondAttribute="bottom" id="WqN-7t-aLk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BTG-Mv-ZpQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="CA5-03-rIs" id="SGm-2Y-r0B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wBv-v9-xAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="170" y="887"/>
+        </scene>
         <!--Chat List View Controller-->
         <scene sceneID="8SJ-TX-4FI">
             <objects>

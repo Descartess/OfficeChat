@@ -18,7 +18,7 @@ struct Channel {
         self.name = name
     }
     
-    init?(document: QueryDocumentSnapshot) {
+    init?(document: DocumentProtocol) {
         let data = document.data()
         
         guard let name = data["name"] as? String else {
