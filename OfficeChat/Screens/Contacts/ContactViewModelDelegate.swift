@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ContactViewModelDelegate: class {
-    func added(channel: Contact)
-    func modified(channel: Contact)
-    func removed(channel: Contact)
+    func added(contact: Contact)
+    func modified(contact: Contact)
+    func removed(contact: Contact)
 }

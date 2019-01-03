@@ -31,6 +31,7 @@ class ProfileCoordinator: Coordinator {
         else { return }
         
         self.profileViewController = profileViewController
+        self.profileViewController?.delegate = self
         let profileViewModel = ProfileViewModel(user: user)
         self.profileViewController?.viewModel = profileViewModel
         presenter.rootViewController = profileViewController

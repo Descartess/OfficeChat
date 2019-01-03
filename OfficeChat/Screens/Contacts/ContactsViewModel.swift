@@ -57,11 +57,11 @@ class ContactsViewModel {
             guard !allContacts.contains(contact) else { return }
             allContacts.append(contact)
             allContacts.sort()
-            delegate?.added(channel: contact)
+            delegate?.added(contact: contact)
         case .modified:
-            delegate?.modified(channel: contact)
+            delegate?.modified(contact: contact)
         case .removed:
-            delegate?.removed(channel: contact)
+            delegate?.removed(contact: contact)
         }
     }
     

@@ -22,7 +22,7 @@ class ContactsViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: contactCellIdentifier)
         tableView.dataSource = self
-        tableView.delegate = self
+        searchBar.delegate = self
         
         title = "Contacts"
         setUpNavBar()
@@ -33,7 +33,9 @@ class ContactsViewController: UIViewController {
     }
     
     func rightBarButtonItem() -> UIBarButtonItem {
-        let rightBar = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil)
+        let rightBar = UIBarButtonItem(barButtonSystemItem: .search,
+                                       target: self,
+                                       action: #selector(searchButtonPressed))
         return rightBar
     }
     
@@ -58,13 +60,9 @@ class ContactsViewController: UIViewController {
     @objc func cancelButtonPressed() {
         showSearchBar = !showSearchBar
         viewModel?.search(text: "")
+        title = "Contacts"
+        navigationItem.titleView = nil
         setUpNavBar()
-    }
-}
-
-extension ContactsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
 }
 
@@ -86,15 +84,31 @@ extension ContactsViewController: UITableViewDataSource {
 }
 
 extension ContactsViewController: ContactViewModelDelegate {
-    func added(channel: Contact) {
-        
+    func added(contact: Contact) {
+        guard let vm = viewModel,
+            let index = vm.contacts.index(of: contact)
+            else { return }
+        tableView.insertRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
     
-    func modified(channel: Contact) {
-        
+    func modified(contact: Contact) {
+        guard let vm = viewModel,
+            let index = vm.contacts.index(of: contact)
+            else { return }
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
     
-    func removed(channel: Contact) {
-        
+    func removed(contact: Contact) {
+        guard let vm = viewModel,
+            let index = vm.contacts.index(of: contact)
+            else { return }
+        tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+    }
+}
+
+extension ContactsViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel?.search(text: searchText)
+        tableView.reloadData()
     }
 }

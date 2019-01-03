@@ -17,6 +17,8 @@ enum AlertReasons {
 }
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var signIn: UIButton!
+    @IBOutlet weak var signUp: UIButton!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBAction func signInButton(_ sender: Any) {
@@ -57,6 +59,23 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func setUpViews() {
+        emailField.layer.cornerRadius = 32
+        emailField.layer.shadowColor = UIColor.black.cgColor
+        emailField.layer.shadowOpacity = 0.2
+        emailField.layer.shadowOffset = CGSize.zero
+        emailField.layer.shadowRadius = 10
+        
+        passwordField.layer.cornerRadius = 32
+        passwordField.layer.shadowColor = UIColor.black.cgColor
+        passwordField.layer.shadowOpacity = 0.2
+        passwordField.layer.shadowOffset = CGSize.zero
+        passwordField.layer.shadowRadius = 10
+        
+        signIn.layer.cornerRadius = 27
+        signUp.layer.cornerRadius = 27
+    }
+    
     func validateInput() -> (email:String, password: String)? {
         guard
             let vm = viewModel,
@@ -72,11 +91,12 @@ class LoginViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpViews()
         emailField.delegate = self
         passwordField.delegate = self
         emailField.text = nil
         passwordField.text = nil
-        super.viewDidLoad()
     }
     
     func bindViewModel() {

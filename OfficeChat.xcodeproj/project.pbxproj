@@ -62,7 +62,6 @@
 		13E4617A21D4E80C0026872B /* ChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4617921D4E80C0026872B /* ChannelTests.swift */; };
 		13E4617C21D4E8290026872B /* ContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4617B21D4E8290026872B /* ContactTests.swift */; };
 		13E4617E21D4E86A0026872B /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4617D21D4E86A0026872B /* MessageTests.swift */; };
-		13E4618021D4E8850026872B /* ImageMediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4617F21D4E8850026872B /* ImageMediaTests.swift */; };
 		13E4618321D4E99E0026872B /* CollectionReferenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4618221D4E99E0026872B /* CollectionReferenceProtocol.swift */; };
 		13E4618521D6161B0026872B /* DocumentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4618421D6161B0026872B /* DocumentProtocol.swift */; };
 		13E4618721D617390026872B /* MockDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E4618621D617390026872B /* MockDocument.swift */; };
@@ -168,7 +167,6 @@
 		13E4617921D4E80C0026872B /* ChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTests.swift; sourceTree = "<group>"; };
 		13E4617B21D4E8290026872B /* ContactTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTests.swift; sourceTree = "<group>"; };
 		13E4617D21D4E86A0026872B /* MessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
-		13E4617F21D4E8850026872B /* ImageMediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaTests.swift; sourceTree = "<group>"; };
 		13E4618221D4E99E0026872B /* CollectionReferenceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReferenceProtocol.swift; sourceTree = "<group>"; };
 		13E4618421D6161B0026872B /* DocumentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentProtocol.swift; sourceTree = "<group>"; };
 		13E4618621D617390026872B /* MockDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDocument.swift; sourceTree = "<group>"; };
@@ -404,7 +402,6 @@
 				13E4617921D4E80C0026872B /* ChannelTests.swift */,
 				13E4617B21D4E8290026872B /* ContactTests.swift */,
 				13E4617D21D4E86A0026872B /* MessageTests.swift */,
-				13E4617F21D4E8850026872B /* ImageMediaTests.swift */,
 			);
 			path = ModelTests;
 			sourceTree = "<group>";
@@ -543,6 +540,7 @@
 				1327999D21B93C370039977C /* ShellScript */,
 				40F6BA6809D7048D5B53BF07 /* [CP] Embed Pods Frameworks */,
 				3BE37C3AC3145C4EDA4C37C3 /* [CP] Copy Pods Resources */,
+				13E461A021D8CAAE0026872B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -688,6 +686,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		13E461A021D8CAAE0026872B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 8257c8777820fe31465084d5a48e9dcc68e345a2 041b42a16cd8f8a4e4a6b58acfa33cf089394b8b1690f489f8b8e1946ae422e6\n";
 		};
 		3ADF17F20744492490D7FBB5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -901,7 +916,6 @@
 				13E4617521D4E1C30026872B /* ChatViewModelTests.swift in Sources */,
 				13E4619F21D799CD0026872B /* ChatListViewControllerTests.swift in Sources */,
 				13E4616D21D4DA050026872B /* MainScreenCoordinatorTests.swift in Sources */,
-				13E4618021D4E8850026872B /* ImageMediaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

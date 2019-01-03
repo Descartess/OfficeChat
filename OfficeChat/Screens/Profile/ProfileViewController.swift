@@ -9,7 +9,6 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    
     @IBOutlet weak var displayNameTextField: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var bioTextField: UITextField!
@@ -42,8 +41,25 @@ class ProfileViewController: UIViewController {
         saveButton.isEnabled = vm.isSaveEnabled
     }
     
+    func setUpViews() {
+        displayNameTextField.layer.cornerRadius = 32
+        displayNameTextField.layer.shadowColor = UIColor.black.cgColor
+        displayNameTextField.layer.shadowOpacity = 0.2
+        displayNameTextField.layer.shadowOffset = CGSize.zero
+        displayNameTextField.layer.shadowRadius = 10
+        
+        bioTextField.layer.cornerRadius = 32
+        bioTextField.layer.shadowColor = UIColor.black.cgColor
+        bioTextField.layer.shadowOpacity = 0.2
+        bioTextField.layer.shadowOffset = CGSize.zero
+        bioTextField.layer.shadowRadius = 10
+        
+        saveButton.layer.cornerRadius = 10
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpViews()
         displayNameTextField.delegate = self
         displayNameTextField.addTarget(self,
                                        action: #selector(self.textFieldDidChange(_:)),
