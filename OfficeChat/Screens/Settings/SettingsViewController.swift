@@ -19,6 +19,8 @@ class SettingsViewController: UIViewController {
     }
     weak var delegate: MainScreenCoordinatorDelegate?
 
+    @IBOutlet weak var signOut: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     @IBAction func signOutAction(_ sender: UIButton) {
         guard
             let vm = viewModel
@@ -32,6 +34,11 @@ class SettingsViewController: UIViewController {
         else { return }
         vm.deleteAccount()
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        signOut.layer.cornerRadius = 15
+        deleteButton.layer.cornerRadius = 15
+    }
     
     func bindViewModel() {
         guard
@@ -39,9 +46,6 @@ class SettingsViewController: UIViewController {
             let vm = viewModel
             else { return }
         displayName.text = vm.user.displayName
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 }
 

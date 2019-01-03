@@ -62,37 +62,12 @@ class ChatViewModel {
             }
         }
     }
-    
-    func downloadImage(at url: URL, completion: @escaping (UIImage?) -> Void) {
-        let ref = Storage.storage().reference(forURL: url.absoluteString)
-        let megaByte = Int64(1 * 1024 * 1024)
-        
-        ref.getData(maxSize: megaByte) { data, error in
-            guard let imageData = data else {
-                completion(nil)
-                return
-            }
-            completion(UIImage(data: imageData))
-        }
-    }
 
     func handleDocumentChange(_ change: DocumentChangeProtocol) {
-        guard var message = Message(document: change.data) else { return }
+        guard let message = Message(document: change.data) else { return }
         switch change.type {
         case .added:
-            if let url = message.downloadURL {
-                downloadImage(at: url) { [weak self] image in
-                    guard
-                        let self = self,
-                        let image = image
-                    else { return }
-                    
-                    message.image = image
-                    self.insertNewMessage(message)
-                }
-            } else {
-                insertNewMessage(message)
-            }
+            insertNewMessage(message)
         default:
             break
         }

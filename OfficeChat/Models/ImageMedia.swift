@@ -9,7 +9,7 @@
 import Foundation
 import MessageKit
 
-struct Image: MediaItem {
+class Image: MediaItem {
     var url: URL?
     
     var image: UIImage?
@@ -20,12 +20,6 @@ struct Image: MediaItem {
     
     init(image: UIImage) {
         self.image = image
-        self.size = CGSize(width: 240, height: 240)
-        self.placeholderImage = UIImage()
-    }
-    
-    init(url: URL) {
-        self.url = url
         self.size = CGSize(width: 240, height: 240)
         self.placeholderImage = UIImage()
     }

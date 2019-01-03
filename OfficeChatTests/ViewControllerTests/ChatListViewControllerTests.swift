@@ -26,6 +26,7 @@ class ChatListViewControllerTests: QuickSpec {
                 viewModel = ChatListViewModel(currentUser: Fixtures.mockUser)
                 
                 subject = chatListViewController
+                subject.loadView()
                 subject.viewModel = viewModel
             }
             

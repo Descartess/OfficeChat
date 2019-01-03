@@ -50,6 +50,12 @@ class ChatViewController: MessagesViewController {
         title = vm.channel.name
     }
     
+    let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        return formatter
+    }()
+    
     @objc
     func cameraButtonPressed() {
         let picker = UIImagePickerController()
@@ -83,14 +89,30 @@ extension ChatViewController: MessagesDataSource {
     }
     
     func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        if indexPath.section % 3 == 0 {
+            return NSAttributedString(string: MessageKitDateFormatter.shared.string(from: message.sentDate),
+                                      attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10),
+                                                   NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        }
+        return nil
+    }
+    
+    func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let name = message.sender.displayName
-        return NSAttributedString(
+        let label = NSAttributedString(
             string: name,
             attributes: [
                 .font: UIFont.preferredFont(forTextStyle: .caption1),
                 .foregroundColor: UIColor(white: 0.3, alpha: 1)
             ]
         )
+        return label
+    }
+    
+    func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        let dateString = formatter.string(from: message.sentDate)
+        return NSAttributedString(string: dateString,
+                                  attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
     }
 }
 
@@ -111,19 +133,39 @@ extension ChatViewController: MessagesLayoutDelegate {
                     in messagesCollectionView: MessagesCollectionView) -> CGSize {
         return .zero
     }
+    
+    func configureAvatarView(_ avatarView: AvatarView,
+                             for message: MessageType,
+                             at indexPath: IndexPath,
+                             in messagesCollectionView: MessagesCollectionView) {
+        avatarView.isHidden = true
+    }
+    
+    func cellTopLabelHeight(for message: MessageType,
+                            at indexPath: IndexPath,
+                            in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 10
+    }
+    
+    func messageTopLabelHeight(for message: MessageType,
+                               at indexPath: IndexPath,
+                               in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 15
+    }
+    
+    func messageBottomLabelHeight(for message: MessageType,
+                                  at indexPath: IndexPath,
+                                  in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 15
+    }
 }
 
 extension ChatViewController: MessagesDisplayDelegate {
     func backgroundColor(for message: MessageType,
                          at indexPath: IndexPath,
                          in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? .primary : .incomingMessage
-    }
-    
-    func shouldDisplayHeader(for message: MessageType,
-                             at indexPath: IndexPath,
-                             in messagesCollectionView: MessagesCollectionView) -> Bool {
-        return false
+        return isFromCurrentSender(message: message) ? .primary :
+            UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
     }
     
     func messageStyle(for message: MessageType,
@@ -131,6 +173,16 @@ extension ChatViewController: MessagesDisplayDelegate {
                       in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
         return .bubbleTail(corner, .curved)
+    }
+    
+    func configureMediaMessageImageView(_ imageView: UIImageView,
+                                        for message: MessageType,
+                                        at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        guard
+            let msg = message as? Message,
+            let url = msg.downloadURL
+        else { return }
+        imageView.load(url: url)
     }
 }
 
@@ -154,16 +206,19 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
             PHImageManager.default().requestImage(for: asset,
                                                   targetSize: size,
                                                   contentMode: .aspectFit,
-                                                  options: nil) { result, info in
-                    guard let image = result else {
+                                                  options: nil) { result, _ in
+                    guard let image = result,
+                        let vm = self.viewModel else {
                         return
                     }
-                    
-                    self.viewModel?.sendPhoto(image)
+                    vm.insertNewMessage(Message(user: vm.user, image: image))
+                    vm.sendPhoto(image)
             }
             
-        } else if let image = info[.originalImage] as? UIImage {
-            viewModel?.sendPhoto(image)
+        } else if let image = info[.originalImage] as? UIImage,
+            let vm = self.viewModel {
+            vm.insertNewMessage(Message(user: vm.user, image: image))
+            vm.sendPhoto(image)
         }
     }
     

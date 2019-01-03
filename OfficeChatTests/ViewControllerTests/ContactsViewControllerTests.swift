@@ -31,6 +31,7 @@ class ContactsViewControllerTests: QuickSpec {
             
             it("view is present ") {
                 expect(subject.view).toNot(beNil())
+                expect(subject.tableView).toNot(beNil())
             }
         }
     }

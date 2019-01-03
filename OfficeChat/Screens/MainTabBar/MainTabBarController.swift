@@ -30,6 +30,10 @@ class MainTabBarController: UITabBarController {
             let user = authManager.activeUser
         else { return }
         
+        chatListVC.loadViewIfNeeded()
+        settingsVC.loadViewIfNeeded()
+        contactsVC.loadViewIfNeeded()
+        
         let chatListViewModel = ChatListViewModel(currentUser: user)
         chatListViewModel.delegate = chatListVC
         chatListVC.viewModel = chatListViewModel

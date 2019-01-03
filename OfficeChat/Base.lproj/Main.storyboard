@@ -20,9 +20,11 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fe-zm-pB2">
                                 <rect key="frame" x="32" y="305" width="102.5" height="50"/>
-                                <state key="normal" title="Sign In"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="signInButton:" destination="8VC-pD-mAC" eventType="touchUpInside" id="gGC-YL-Df7"/>
                                     <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hg7-mw-MqJ"/>
                                 </connections>
                             </button>
@@ -49,7 +51,10 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1O-hQ-tOe">
                                 <rect key="frame" x="185.5" y="305" width="102.5" height="50"/>
-                                <state key="normal" title="Sign Up"/>
+                                <color key="backgroundColor" red="0.048814129654887795" green="0.47615770725388606" blue="0.090453135960121306" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bVW-rQ-a8g"/>
                                 </connections>
@@ -78,6 +83,8 @@
                     <connections>
                         <outlet property="emailField" destination="GRx-dA-mWX" id="PAF-Rw-n1C"/>
                         <outlet property="passwordField" destination="V8j-CR-F7j" id="eL5-dU-pfE"/>
+                        <outlet property="signIn" destination="6Fe-zm-pB2" id="iKf-cM-QUh"/>
+                        <outlet property="signUp" destination="b1O-hQ-tOe" id="85T-QP-2cH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -220,16 +227,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qx-Cx-1Av">
-                                <rect key="frame" x="49" y="432" width="60" height="30"/>
-                                <state key="normal" title="Sign Out"/>
+                                <rect key="frame" x="40" y="432" width="90" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Khk-Un-UPH"/>
+                                    <constraint firstAttribute="width" constant="90" id="YCB-ZO-FDO"/>
+                                </constraints>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="signOutAction:" destination="MvL-Nx-djt" eventType="touchUpInside" id="tyb-Gg-1Om"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hca-mQ-3V4">
-                                <rect key="frame" x="185" y="432" width="105" height="30"/>
+                                <rect key="frame" x="175" y="432" width="120" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.21917146800000001" blue="0.17740914990000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="3Jq-Jh-gZe"/>
+                                    <constraint firstAttribute="height" constant="45" id="jaX-dZ-IcT"/>
+                                </constraints>
                                 <state key="normal" title="Delete Account">
-                                    <color key="titleColor" red="1" green="0.21917146801570564" blue="0.17740914992028534" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="deleteAccountAction:" destination="MvL-Nx-djt" eventType="touchUpInside" id="SbI-3o-vgy"/>
@@ -244,18 +263,19 @@
                             <constraint firstItem="hca-mQ-3V4" firstAttribute="top" secondItem="6qx-Cx-1Av" secondAttribute="top" id="L58-Se-5sL"/>
                             <constraint firstItem="gHf-hD-gJ7" firstAttribute="top" secondItem="S3t-fu-Flf" secondAttribute="bottom" constant="25" id="LbE-x6-mSR"/>
                             <constraint firstItem="UJn-0S-d3C" firstAttribute="top" secondItem="RDh-PB-evl" secondAttribute="top" constant="20" id="S9W-1d-pJM"/>
-                            <constraint firstItem="RDh-PB-evl" firstAttribute="trailing" secondItem="hca-mQ-3V4" secondAttribute="trailing" constant="30" id="YO2-j1-ak7"/>
                             <constraint firstItem="S3t-fu-Flf" firstAttribute="centerX" secondItem="RDh-PB-evl" secondAttribute="centerX" id="YUZ-C1-bBk"/>
-                            <constraint firstItem="6qx-Cx-1Av" firstAttribute="leading" secondItem="RDh-PB-evl" secondAttribute="leading" constant="49" id="aqL-tW-eXg"/>
                             <constraint firstItem="gHf-hD-gJ7" firstAttribute="width" secondItem="Kab-5N-Dgd" secondAttribute="width" multiplier="0.8" id="aqh-zz-T8f"/>
                             <constraint firstItem="S3t-fu-Flf" firstAttribute="top" secondItem="UJn-0S-d3C" secondAttribute="bottom" constant="25" id="guQ-YG-RO6"/>
-                            <constraint firstItem="hca-mQ-3V4" firstAttribute="leading" secondItem="6qx-Cx-1Av" secondAttribute="trailing" constant="76" id="rU0-LD-4FD"/>
+                            <constraint firstItem="6qx-Cx-1Av" firstAttribute="centerX" secondItem="RDh-PB-evl" secondAttribute="centerX" constant="-75" id="qH9-L5-vkt"/>
+                            <constraint firstItem="hca-mQ-3V4" firstAttribute="centerX" secondItem="RDh-PB-evl" secondAttribute="centerX" constant="75" id="ufU-im-CSR"/>
                             <constraint firstItem="gHf-hD-gJ7" firstAttribute="centerX" secondItem="RDh-PB-evl" secondAttribute="centerX" id="vPG-ft-gd5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RDh-PB-evl"/>
                     </view>
                     <connections>
+                        <outlet property="deleteButton" destination="hca-mQ-3V4" id="ZLa-Ol-v9W"/>
                         <outlet property="displayName" destination="UJn-0S-d3C" id="2DF-4a-AmK"/>
+                        <outlet property="signOut" destination="6qx-Cx-1Av" id="2pf-Xb-fqQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4g-Nm-1F3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -297,8 +317,15 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNf-ca-Kx3">
-                                <rect key="frame" x="143" y="423" width="34" height="10"/>
-                                <state key="normal" title="Save"/>
+                                <rect key="frame" x="115" y="423" width="90" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="ZzN-2g-J0P"/>
+                                    <constraint firstAttribute="width" constant="90" id="m6P-eI-Foc"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="saveProfile:" destination="a1t-xA-frQ" eventType="touchUpInside" id="whT-kT-HJO"/>
                                 </connections>
@@ -325,7 +352,7 @@
                         <outlet property="bioTextField" destination="vTb-wf-bSC" id="R2D-K6-v3F"/>
                         <outlet property="displayNameTextField" destination="JIB-pB-ReD" id="1pe-47-CFK"/>
                         <outlet property="profileImage" destination="vcm-Rd-bze" id="8QS-m6-xdh"/>
-                        <outlet property="saveButton" destination="KNf-ca-Kx3" id="KrQ-RB-RiO"/>
+                        <outlet property="saveButton" destination="KNf-ca-Kx3" id="Avm-Sv-3mI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlS-jj-2u3" userLabel="First Responder" sceneMemberID="firstResponder"/>

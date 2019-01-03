@@ -16,6 +16,7 @@ class ProfileViewControllerTests: QuickSpec {
     override func spec() {
         var subject: ProfileViewController!
         var viewModel: ProfileViewModel!
+        var delegate: MockProfileCoordinatorDelegate!
         
         describe("ProfileViewController") {
             beforeEach {
@@ -26,12 +27,33 @@ class ProfileViewControllerTests: QuickSpec {
                 viewModel = ProfileViewModel(user: Fixtures.mockUser)
                 
                 subject = profileViewController
+                subject.loadView()
+                delegate = MockProfileCoordinatorDelegate()
+                subject.delegate = delegate
                 subject.viewModel = viewModel
             }
             
             it("view is present ") {
                 expect(subject.view).toNot(beNil())
             }
+            
+            it(" validates input ") {
+                subject.saveButton.sendActions(for: .touchUpInside)
+                expect(delegate.didCreateUserProfile_wasCalled).toEventually(beFalse())
+            }
+            
+            it(" calls delegate when save action is tapped") {
+                subject.displayNameTextField.text = "Paul Nyondo"
+                subject.saveButton.sendActions(for: .touchUpInside)
+                expect(delegate.didCreateUserProfile_wasCalled).toEventually(beTrue())
+            }
         }
+    }
+}
+
+class MockProfileCoordinatorDelegate:ProfileCoordinatorDelegate {
+    var didCreateUserProfile_wasCalled = false
+    func didCreateUserProfile() {
+        didCreateUserProfile_wasCalled = true
     }
 }
