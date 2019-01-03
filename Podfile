@@ -6,6 +6,8 @@ target 'OfficeChat' do
   pod 'MessageKit'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Fabric'
+  pod 'Crashlytics'
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
 

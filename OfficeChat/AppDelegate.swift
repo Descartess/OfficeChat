@@ -6,6 +6,8 @@
 //  Copyright © 2018 Paul Nyondo. All rights reserved.
 //
 
+import Fabric
+import Crashlytics
 import Firebase
 import UIKit
 
@@ -19,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        Fabric.with([Crashlytics.self])
         
         self.applicationCoordinator = AppCoordinator(window: UIWindow(frame: UIScreen.main.bounds))
         

@@ -54,7 +54,7 @@ struct Message: MessageType {
         } else if let urlString = data["url"] as? String, let url = URL(string: urlString) {
             downloadURL = url
             content = ""
-            kind = .photo(Image(url: url))
+            kind = .photo(Image(image: UIImage()))
         } else {
             return nil
         }
