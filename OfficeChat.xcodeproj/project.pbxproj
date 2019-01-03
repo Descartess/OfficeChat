@@ -541,6 +541,7 @@
 				40F6BA6809D7048D5B53BF07 /* [CP] Embed Pods Frameworks */,
 				3BE37C3AC3145C4EDA4C37C3 /* [CP] Copy Pods Resources */,
 				13E461A021D8CAAE0026872B /* ShellScript */,
+				133BDEB321DE11A100FCE35E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -686,6 +687,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		133BDEB321DE11A100FCE35E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 		};
 		13E461A021D8CAAE0026872B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
