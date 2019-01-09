@@ -14,19 +14,29 @@ import FirebaseAuth
 class MockUser: UserProtocol {
     var displayName: String?
     
-    var uid = "uid_123"
+    var uid: String {
+        return _id
+    }
     
     var providerID = "email"
     
     var email: String?
+    
     var delete_wasCalled = false
     
-    init(displayName: String) {
+    var _id: String
+    
+    init(displayName: String, id: String = "uid_124") {
         self.displayName = displayName
+        self._id = id
     }
     
     func delete(completion: UserProfileChangeCallback? = nil) {
         delete_wasCalled = true
+        
+        if let closure = completion {
+            closure(nil)
+        }
     }
     
     func startProfileChangeRequest() -> UserProfileChangeRequestProtocol {

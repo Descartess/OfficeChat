@@ -10,11 +10,18 @@ import Foundation
 import Firebase
 
 protocol  CollectionReferenceProtocol {
-    func document(_ documentPath: String) -> DocumentReference
-    func addDocument(data: [String : Any], completion: ((Error?) -> Void)?) -> DocumentReference
+    func documentRef(_ documentPath: String) -> DocumentReferenceProtocol
+    func addDocumentRef(data: [String : Any], completion: ((Error?) -> Void)?) -> DocumentReferenceProtocol
     func addSnapshotListener(_ listener: @escaping FIRQuerySnapshotBlock) -> ListenerRegistration
 }
 
 extension CollectionReference: CollectionReferenceProtocol {
+    @discardableResult
+    func addDocumentRef(data: [String : Any], completion: ((Error?) -> Void)?) -> DocumentReferenceProtocol {
+        return self.addDocument(data: data, completion: completion)
+    }
     
+    func documentRef(_ documentPath: String) -> DocumentReferenceProtocol {
+        return self.document(documentPath)
+    }
 }

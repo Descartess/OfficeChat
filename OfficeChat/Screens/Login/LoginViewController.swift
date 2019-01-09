@@ -9,11 +9,11 @@
 import UIKit
 import FirebaseAuth
 
-enum AlertReasons {
+enum AlertReasons: Error {
     case invalidEmail
     case passwordTooShort
     case invalidCredentials
-    case success
+    case custom
 }
 
 class LoginViewController: UIViewController {
@@ -112,8 +112,8 @@ class LoginViewController: UIViewController {
             message = "Invalid Email"
         case .passwordTooShort:
             message = "Password too short"
-        case .success:
-            message = "Success"
+        case .custom:
+            message = "custom"
         }
         
         let alertController = UIAlertController(title: "Alert",

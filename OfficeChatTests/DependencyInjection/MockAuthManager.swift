@@ -21,11 +21,19 @@ class MockAuthManager: AuthManagerProtocol {
     func signIn(withEmail email: String, password: String, completion: AuthDataResultCallback?) {
         signIn_wasCalled_withArgs = (email, password)
         activeUser = Fixtures.mockUser
+        
+        if let closure = completion {
+            closure(nil, AlertReasons.custom)
+        }
     }
     
     func createUser(withEmail email: String, password: String, completion: AuthDataResultCallback?) {
         createUser_wasCalled_withArgs = (email, password)
         activeUser = Fixtures.mockUser
+        
+        if let closure = completion {
+            closure(nil, AlertReasons.custom)
+        }
     }
     
     func signOut() throws {

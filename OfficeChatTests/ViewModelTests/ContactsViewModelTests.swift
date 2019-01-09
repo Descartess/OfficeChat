@@ -52,13 +52,13 @@ class MockContactViewModelDelegate: ContactViewModelDelegate {
     var contact_wasModified = false
     var contact_wasRemoved = false
     
-    func added(channel: Contact) {
+    func added(contact channel: Contact) {
         contact_wasAdded = true
     }
-    func modified(channel: Contact) {
+    func modified(contact channel: Contact) {
         contact_wasModified = true
     }
-    func removed(channel: Contact) {
+    func removed(contact channel: Contact) {
         contact_wasRemoved = true
     }
 }
