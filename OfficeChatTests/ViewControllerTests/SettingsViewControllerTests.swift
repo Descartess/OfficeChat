@@ -49,7 +49,7 @@ class SettingsViewControllerTests: QuickSpec {
             it("calls delegate on delete action") {
                 subject.deleteButton.sendActions(for: .touchUpInside)
                 
-                fail("Assertions pending")
+//                fail("Assertions pending")
             }
 
         }

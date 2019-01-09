@@ -51,6 +51,10 @@ class MessageTesst: QuickSpec {
             it("has accurate dictionary representation") {
                 expect(subject.representation).toNot(beNil())
             }
+            
+            it("has message id ") {
+                expect(subject.messageId).toNot(beNil())
+            }
         }
     }
 }

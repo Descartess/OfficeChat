@@ -8,9 +8,12 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestore
 
 struct AppEnvironment {
-    private static var environmentStack: [AppEnvironment] = [AppEnvironment(authManager: Auth.auth())]
+    private static var environmentStack: [AppEnvironment] = [AppEnvironment(authManager: Auth.auth(),
+                                                                            databaseManager: Firestore.firestore())
+                                                            ]
     
     static var current: AppEnvironment {
         return environmentStack.last!
@@ -21,4 +24,5 @@ struct AppEnvironment {
     }
 
     let authManager: AuthManagerProtocol
+    let databaseManager: DatabaseManagerProtocol
 }

@@ -11,10 +11,12 @@ import FirebaseFirestore
 import FirebaseAuth
 
 class ChatListViewModel {
-    let db = Firestore.firestore()
+    var db: DatabaseManagerProtocol {
+        return AppEnvironment.current.databaseManager
+    }
     
-    var chatReference: CollectionReference {
-        return db.collection("channels")
+    var chatReference: CollectionReferenceProtocol {
+        return db.collectionReference("channels")
     }
     weak var delegate: ChatListDelegate?
     
@@ -54,7 +56,7 @@ class ChatListViewModel {
     }
     
     func createChannel(_ channel: Channel) {
-        chatReference.addDocument(data: channel.representation) { error in
+        chatReference.addDocumentRef(data: channel.representation) { error in
             if let e = error {
                 print("Error saving channel: \(e.localizedDescription)")
             }

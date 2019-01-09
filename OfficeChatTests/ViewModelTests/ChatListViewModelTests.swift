@@ -21,6 +21,7 @@ class ChatListViewModelTests:QuickSpec {
                 subject = ChatListViewModel(currentUser: Fixtures.mockUser)
                 delegate = MockChatListDelegate()
                 subject.delegate = delegate
+                AppEnvironment.pushEnvironment(env: Fixtures.testEnvironment)
             }
             
             it("delegate was called channel is added") {
@@ -41,6 +42,10 @@ class ChatListViewModelTests:QuickSpec {
             it("searches channels") {
                 subject.search(text: "No channel")
                 expect(subject.channels.isEmpty).to(beTrue())
+            }
+            
+            it("adds channels"){
+                subject.createChannel(Channel(name: "testChannel"))
             }
         }
     }

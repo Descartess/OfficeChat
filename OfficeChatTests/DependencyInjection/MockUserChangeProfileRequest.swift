@@ -20,5 +20,9 @@ class MockUserChangeProfileRequest: UserProfileChangeRequestProtocol {
     
     func commitChanges(completion: UserProfileChangeCallback? = nil) {
         commitChanges_wasCalled = true
+        
+        if let closure = completion {
+            closure(nil)
+        }
     }
 }

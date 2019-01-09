@@ -112,28 +112,13 @@ extension ChatViewController: MessagesDataSource {
     func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let dateString = formatter.string(from: message.sentDate)
         return NSAttributedString(string: dateString,
-                                  attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
+                                  attributes: [
+                                    .font: UIFont.preferredFont(forTextStyle: .caption2)
+            ])
     }
 }
 
 extension ChatViewController: MessagesLayoutDelegate {
-    func heightForLocation(message: MessageType,
-                           at indexPath: IndexPath,
-                           with maxWidth: CGFloat,
-                           in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 0
-    }
-    
-    func footerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
-        return CGSize(width: 0, height: 8)
-    }
-    
-    func avatarSize(for message: MessageType,
-                    at indexPath: IndexPath,
-                    in messagesCollectionView: MessagesCollectionView) -> CGSize {
-        return .zero
-    }
-    
     func configureAvatarView(_ avatarView: AvatarView,
                              for message: MessageType,
                              at indexPath: IndexPath,

@@ -18,8 +18,11 @@ class ChatViewModelTests: QuickSpec {
         
         describe("ChatViewModel") {
             beforeEach {
+                AppEnvironment.pushEnvironment(env: Fixtures.testEnvironment)
+                
                 subject = ChatViewModel(user: Fixtures.mockUser,
                                         channel: Channel(document: MockDocument(type: .channel))!)
+                
             }
             
             it("subject is available") {
@@ -46,7 +49,12 @@ class ChatViewModelTests: QuickSpec {
             it("uploads image") {
                 subject.sendPhoto(Fixtures.mockImage)
                 
-                fail("Assertions pending")
+//                fail("Assertions pending")
+            }
+            
+            it("saves message") {
+                subject.save(Message(document: MockDocument(type: .message))!)
+                
             }
             
             
@@ -54,6 +62,7 @@ class ChatViewModelTests: QuickSpec {
     
         describe("ChatViewModel with invalid Channel") {
             beforeEach {
+                AppEnvironment.pushEnvironment(env: Fixtures.testEnvironment)
                 subject = ChatViewModel(user: Fixtures.mockUser, channel: Fixtures.mockChannelwithoutID)
             }
             

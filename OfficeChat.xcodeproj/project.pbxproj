@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130ACB3D21E26FC0003A5675 /* MockDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130ACB3C21E26FC0003A5675 /* MockDatabaseManager.swift */; };
+		130ACB3F21E26FF6003A5675 /* MockCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130ACB3E21E26FF6003A5675 /* MockCollectionReference.swift */; };
+		130ACB4121E27AD8003A5675 /* DocumentReferenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130ACB4021E27AD8003A5675 /* DocumentReferenceProtocol.swift */; };
+		130ACB4321E369B8003A5675 /* StorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130ACB4221E369B8003A5675 /* StorageProtocol.swift */; };
+		130ACB4521E36B3C003A5675 /* StorageReferenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130ACB4421E36B3C003A5675 /* StorageReferenceProtocol.swift */; };
 		130C1F1121D1D55800871E22 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130C1F1021D1D55800871E22 /* UIImageView+Extensions.swift */; };
 		132050EB21C8CC7900CF3C82 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132050EA21C8CC7900CF3C82 /* AppCoordinatorTests.swift */; };
-		132050EE21C8D04400CF3C82 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132050ED21C8D04400CF3C82 /* Mocks.swift */; };
 		132050F021C8D06000CF3C82 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132050EF21C8D06000CF3C82 /* Fixtures.swift */; };
 		132050F221C8D09900CF3C82 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132050F121C8D09900CF3C82 /* AppEnvironment.swift */; };
 		132050F721C8D1BD00CF3C82 /* AuthManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132050F621C8D1BD00CF3C82 /* AuthManagerProtocol.swift */; };
@@ -106,9 +110,13 @@
 
 /* Begin PBXFileReference section */
 		0F0FC9C686148D7D824995BD /* Pods-OfficeChat.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfficeChat.development.xcconfig"; path = "Pods/Target Support Files/Pods-OfficeChat/Pods-OfficeChat.development.xcconfig"; sourceTree = "<group>"; };
+		130ACB3C21E26FC0003A5675 /* MockDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatabaseManager.swift; sourceTree = "<group>"; };
+		130ACB3E21E26FF6003A5675 /* MockCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCollectionReference.swift; sourceTree = "<group>"; };
+		130ACB4021E27AD8003A5675 /* DocumentReferenceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentReferenceProtocol.swift; sourceTree = "<group>"; };
+		130ACB4221E369B8003A5675 /* StorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProtocol.swift; sourceTree = "<group>"; };
+		130ACB4421E36B3C003A5675 /* StorageReferenceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageReferenceProtocol.swift; sourceTree = "<group>"; };
 		130C1F1021D1D55800871E22 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		132050EA21C8CC7900CF3C82 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
-		132050ED21C8D04400CF3C82 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		132050EF21C8D06000CF3C82 /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
 		132050F121C8D09900CF3C82 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		132050F621C8D1BD00CF3C82 /* AuthManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManagerProtocol.swift; sourceTree = "<group>"; };
@@ -254,13 +262,14 @@
 		132050EC21C8D02000CF3C82 /* DependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
-				132050ED21C8D04400CF3C82 /* Mocks.swift */,
 				132050EF21C8D06000CF3C82 /* Fixtures.swift */,
 				132050F821C8D73E00CF3C82 /* MockAuthManager.swift */,
 				132050FD21C92C6F00CF3C82 /* MockUser.swift */,
 				13E4618621D617390026872B /* MockDocument.swift */,
 				13E4618A21D645100026872B /* MockDocumentChange.swift */,
 				13E4618F21D6A5840026872B /* MockUserChangeProfileRequest.swift */,
+				130ACB3C21E26FC0003A5675 /* MockDatabaseManager.swift */,
+				130ACB3E21E26FF6003A5675 /* MockCollectionReference.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -274,6 +283,9 @@
 				13E4618221D4E99E0026872B /* CollectionReferenceProtocol.swift */,
 				13E4618421D6161B0026872B /* DocumentProtocol.swift */,
 				13E4618821D641FD0026872B /* DocumentChangeProtocol.swift */,
+				130ACB4021E27AD8003A5675 /* DocumentReferenceProtocol.swift */,
+				130ACB4221E369B8003A5675 /* StorageProtocol.swift */,
+				130ACB4421E36B3C003A5675 /* StorageReferenceProtocol.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -537,11 +549,11 @@
 				138CE4CB21B7FBB20033CC05 /* Sources */,
 				138CE4CC21B7FBB20033CC05 /* Frameworks */,
 				138CE4CD21B7FBB20033CC05 /* Resources */,
+				133BDEB321DE11A100FCE35E /* ShellScript */,
 				1327999D21B93C370039977C /* ShellScript */,
 				40F6BA6809D7048D5B53BF07 /* [CP] Embed Pods Frameworks */,
 				3BE37C3AC3145C4EDA4C37C3 /* [CP] Copy Pods Resources */,
 				13E461A021D8CAAE0026872B /* ShellScript */,
-				133BDEB321DE11A100FCE35E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -863,6 +875,7 @@
 				13DA538321C5765F00395772 /* ImageMedia.swift in Sources */,
 				13E4618921D641FD0026872B /* DocumentChangeProtocol.swift in Sources */,
 				13AC768F21C51595007AE87C /* JSONRepresentation.swift in Sources */,
+				130ACB4521E36B3C003A5675 /* StorageReferenceProtocol.swift in Sources */,
 				13DA538121C5397500395772 /* UImage+Extensions.swift in Sources */,
 				13DA539021C585B400395772 /* ProfileViewModel.swift in Sources */,
 				13E469E021BD95E600BB8D18 /* ChatListViewController.swift in Sources */,
@@ -887,12 +900,14 @@
 				13E469E221BD963500BB8D18 /* ChatListViewModel.swift in Sources */,
 				130C1F1121D1D55800871E22 /* UIImageView+Extensions.swift in Sources */,
 				13E469D521BD56F200BB8D18 /* LoginViewModel.swift in Sources */,
+				130ACB4121E27AD8003A5675 /* DocumentReferenceProtocol.swift in Sources */,
 				13E4618321D4E99E0026872B /* CollectionReferenceProtocol.swift in Sources */,
 				13AC767921C128BE007AE87C /* ChatViewController.swift in Sources */,
 				137FE0DC21CFA45A00FD34D3 /* ContactsViewModel.swift in Sources */,
 				132050F221C8D09900CF3C82 /* AppEnvironment.swift in Sources */,
 				13AC767D21C129A2007AE87C /* Message.swift in Sources */,
 				13AC767B21C12928007AE87C /* ChatViewModel.swift in Sources */,
+				130ACB4321E369B8003A5675 /* StorageProtocol.swift in Sources */,
 				13DA538E21C5859500395772 /* SettingsViewModel.swift in Sources */,
 				137FE0DA21CFA43E00FD34D3 /* ContactsViewController.swift in Sources */,
 				138CE4D321B7FBB20033CC05 /* AppDelegate.swift in Sources */,
@@ -914,8 +929,8 @@
 				13E4617C21D4E8290026872B /* ContactTests.swift in Sources */,
 				132050EB21C8CC7900CF3C82 /* AppCoordinatorTests.swift in Sources */,
 				13E4616921D4D9870026872B /* AuthenticationCoordinatorTests.swift in Sources */,
+				130ACB3F21E26FF6003A5675 /* MockCollectionReference.swift in Sources */,
 				13E4617E21D4E86A0026872B /* MessageTests.swift in Sources */,
-				132050EE21C8D04400CF3C82 /* Mocks.swift in Sources */,
 				132050F021C8D06000CF3C82 /* Fixtures.swift in Sources */,
 				13E4616B21D4D9D10026872B /* ProfileCoordinatorTests.swift in Sources */,
 				13E4619021D6A5840026872B /* MockUserChangeProfileRequest.swift in Sources */,
@@ -931,6 +946,7 @@
 				13E4619221D78CC70026872B /* ContactsViewModelTests.swift in Sources */,
 				132050F921C8D73E00CF3C82 /* MockAuthManager.swift in Sources */,
 				13E4619921D798FE0026872B /* ProfileViewControllerTests.swift in Sources */,
+				130ACB3D21E26FC0003A5675 /* MockDatabaseManager.swift in Sources */,
 				13E4617521D4E1C30026872B /* ChatViewModelTests.swift in Sources */,
 				13E4619F21D799CD0026872B /* ChatListViewControllerTests.swift in Sources */,
 				13E4616D21D4DA050026872B /* MainScreenCoordinatorTests.swift in Sources */,

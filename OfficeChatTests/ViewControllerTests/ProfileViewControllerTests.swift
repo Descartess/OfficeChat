@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Quick
 import Nimble
 
@@ -47,6 +48,14 @@ class ProfileViewControllerTests: QuickSpec {
                 subject.saveButton.sendActions(for: .touchUpInside)
                 expect(delegate.didCreateUserProfile_wasCalled).toEventually(beTrue())
             }
+            it("activates save button when text is entered") {
+                let textField = UITextField()
+                textField.text = "Some Text .. "
+                _ = subject.textFieldShouldReturn(textField)
+                subject.textFieldDidChange(textField)
+                expect(subject.saveButton.isEnabled).to(beTrue())
+            }
+            
         }
     }
 }

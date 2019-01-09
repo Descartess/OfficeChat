@@ -13,8 +13,11 @@ import FirebaseStorage
 
 class ChatViewModel {
     
-    let db = Firestore.firestore()
-    var reference: CollectionReference?
+    var db: DatabaseManagerProtocol {
+        return AppEnvironment.current.databaseManager
+    }
+    
+    var reference: CollectionReferenceProtocol?
     
     var messages = [Message]()
     var messageListener: ListenerRegistration?
@@ -37,7 +40,7 @@ class ChatViewModel {
         guard let id = channel.id else {
             return nil
         }
-        reference = db.collection(["channels", id, "thread"].joined(separator:"/"))
+        reference = db.collectionReference(["channels", id, "thread"].joined(separator:"/"))
         
         messageListener = reference?.addSnapshotListener { querySnapshot, _ in
             guard let snapshot = querySnapshot else { return }
@@ -56,11 +59,7 @@ class ChatViewModel {
     }
     
     func save(_ message: Message) {
-        reference?.addDocument(data: message.representation) { error in
-            if error != nil {
-                return
-            }
-        }
+        reference?.addDocumentRef(data: message.representation, completion: nil)
     }
 
     func handleDocumentChange(_ change: DocumentChangeProtocol) {
@@ -74,12 +73,9 @@ class ChatViewModel {
     }
     
     func uploadImage(_ image: UIImage, to channel: Channel, completion: @escaping (URL?) -> Void) {
-        guard let channelID = channel.id else {
-            completion(nil)
-            return
-        }
-        
-        guard let scaledImage = image.scaledToSafeUploadSize,
+        guard
+            let channelID = channel.id,
+            let scaledImage = image.scaledToSafeUploadSize,
             let data = scaledImage.jpegData(compressionQuality: 0.4) else {
                 completion(nil)
                 return
@@ -103,14 +99,12 @@ class ChatViewModel {
         uploadingImage = true
         
         uploadImage(image, to: channel) { [weak self] url in
-            guard let `self` = self else {
+            guard
+                let `self` = self,
+                let url = url else {
                 return
             }
             self.uploadingImage = false
-            
-            guard let url = url else {
-                return
-            }
             
             var message = Message(user: self.user, image: image)
             message.downloadURL = url

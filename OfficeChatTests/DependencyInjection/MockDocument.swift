@@ -19,10 +19,11 @@ enum DocumentType {
 class MockDocument: DocumentProtocol {
     
     var documentID: String {
-        return "documentID_123"
+        return _id
     }
-    
+    var _id: String
     var type: DocumentType
+    var user_id: String
     
     func data() -> [String : Any] {
         switch type {
@@ -31,26 +32,28 @@ class MockDocument: DocumentProtocol {
         case .contact:
             return ["name": "Paul",
                     "bio": "A beautiful mind ... ",
-                    "user_id":"uid_123",
+                    "user_id": user_id,
                     "photoUrl": "http://www.example.com"
             ]
         case .message:
             return ["created": Date(),
                     "content": "Test Message",
-                    "senderID": "uid_123",
+                    "senderID": user_id,
                     "senderName": "Paul",
             ]
         case .image(let url):
             return ["created": Date(),
-                    "senderID": "uid_123",
+                    "senderID": user_id,
                     "senderName": "Paul",
                     "url": url
             ]
         }
     }
     
-    init(type: DocumentType) {
+    init(type: DocumentType, id: String = "documentID_123", user: UserProtocol = Fixtures.mockUser) {
         self.type = type
+        self._id = id
+        self.user_id = user.uid
     }
     
     

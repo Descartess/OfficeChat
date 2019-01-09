@@ -8,11 +8,14 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestore
 
 protocol DatabaseManagerProtocol {
-    func collection(_ collectionPath: String) -> CollectionReference
+    func collectionReference(_ collectionPath: String) -> CollectionReferenceProtocol
 }
 
 extension Firestore: DatabaseManagerProtocol {
-    
+    func collectionReference(_ collectionPath: String) -> CollectionReferenceProtocol {
+        return self.collection(collectionPath)
+    }
 }
