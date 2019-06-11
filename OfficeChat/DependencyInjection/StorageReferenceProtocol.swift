@@ -18,7 +18,9 @@ protocol StorageReferenceProtocol {
 }
 
 extension StorageReference: StorageReferenceProtocol {
-    func putDataTask(_ uploadData: Data, metadata: StorageMetadata?, completion: ((StorageMetadata?, Error?) -> Void)?) -> StorageUploadTaskProtocol {
+    func putDataTask(_ uploadData: Data,
+                     metadata: StorageMetadata?,
+                     completion: ((StorageMetadata?, Error?) -> Void)?) -> StorageUploadTaskProtocol {
         return self.putData(uploadData, metadata: metadata, completion: completion)
     }
     

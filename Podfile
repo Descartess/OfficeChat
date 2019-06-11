@@ -3,7 +3,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'OfficeChat' do
-  pod 'MessageKit'
+  pod 'MessageKit', '~>2.0'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Fabric'
