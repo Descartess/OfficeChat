@@ -7,3 +7,22 @@
 //
 
 import Foundation
+import Quick
+import Nimble
+
+@testable import OfficeChat
+
+class ChannelTests: QuickSpec {
+    override func spec() {
+        var subject: Channel!
+        describe("Channel tests") {
+            beforeEach {
+                subject = Channel(document: Fixtures.mockChannel)
+            }
+            
+            it(" has representation"){
+                expect(subject.representation).toNot(beNil())
+            }
+        }
+    }
+}
